@@ -55,7 +55,7 @@ function Search() {
       setSearchResult(results);
       setTimeout(() => {
         setLoading(false);
-      }, 200);
+      }, 100);
     }
   }, [debounced]);
 
