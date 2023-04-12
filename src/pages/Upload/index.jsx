@@ -1,5 +1,3 @@
-
-
 function Upload() {
   return (
     <div>

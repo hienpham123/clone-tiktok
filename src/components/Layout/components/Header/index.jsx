@@ -20,6 +20,7 @@ import Menu from "../../../Poper/Menu";
 import { InboxIcon, MessageIcon, UploadIcon } from "../../../Icons";
 import Image from "../../../Images";
 import Search from "../Search";
+import config from "../../../../config";
 
 const cx = classNames.bind(styles);
 
@@ -95,7 +96,7 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <Link to={"/"} className={cx("logo-link")}>
+        <Link to={config.routes.home} className={cx("logo-link")}>
           <Image src={images.logo} alt="logo" />
         </Link>
         <Search />

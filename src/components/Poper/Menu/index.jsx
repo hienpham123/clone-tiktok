@@ -10,7 +10,12 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 const DefaultFn = () => {};
-function Menu({ children, items = [], onChange = DefaultFn }) {
+function Menu({
+  children,
+  items = [],
+  hideOnClick = false,
+  onChange = DefaultFn,
+}) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -37,6 +42,7 @@ function Menu({ children, items = [], onChange = DefaultFn }) {
     <Tippy
       delay={[0, 1000]}
       offset={[12, 8]}
+      hideOnClick={hideOnClick}
       interactive
       placement="bottom-end"
       render={(attrs) => (
@@ -50,7 +56,7 @@ function Menu({ children, items = [], onChange = DefaultFn }) {
                 }}
               />
             )}
-            {renderItems()}
+            <div className={cx("menu-body")}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
