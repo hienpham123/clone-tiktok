@@ -11,9 +11,11 @@ import { SearchIcon } from "../../../Icons";
 import { LIST_ACCOUNT } from "../../../../mockdata";
 import { useDebounce } from "../../../../hook";
 // import * as searchService from "../../../../apiServices/searchService";
+import { useTranslation } from "react-i18next";
 
 const cx = classNames.bind(styles);
 function Search() {
+  const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [showResult, setShowResult] = useState(true);
@@ -51,7 +53,7 @@ function Search() {
       setLoading(true);
       const results = LIST_ACCOUNT.filter((item) => {
         return item.full_name.toLowerCase().includes(debounced.toLowerCase());
-      });
+      }).slice(0, 6);
       setSearchResult(results);
       setTimeout(() => {
         setLoading(false);
@@ -80,7 +82,7 @@ function Search() {
         <input
           ref={inputRef}
           value={searchValue}
-          placeholder="Search accounts and videos"
+          placeholder={t("Search accounts and videos")}
           spellCheck={false}
           onChange={(e) => setSearchValue(e.target.value)}
           onFocus={() => setShowResult(true)}

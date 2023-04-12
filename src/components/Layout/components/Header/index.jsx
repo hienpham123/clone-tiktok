@@ -5,6 +5,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   faEllipsisVertical,
   faLanguage,
@@ -56,13 +57,20 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
+  const { t, i18n, ready } = useTranslation();
+
   const handleMenuChange = (item) => {
     switch (item.type) {
       case "language":
         // TODO:
+        changeLanguage(item.code);
         break;
       default:
     }
+  };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   //mock currentUser
