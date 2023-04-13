@@ -84,3 +84,22 @@
         text-decoration: underline;
     }
 }
+
+.container-btn-share {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 22px;
+    width: 280px;
+    padding: 8px 0px;
+    max-height: 448px;
+    overflow: auto;
+}
+
+.btn-down {
+    margin-bottom: 10px;
+}
+
+.container-btns {
+    display: flex;
+    max-height: 20px;
+}

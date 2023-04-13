@@ -142,7 +142,7 @@ function Header() {
             {currentUser ? (
               <Image
                 className={cx("user-avatar")}
-                src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/280502370_1661059197603112_5055712193208809162_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=107&ccb=1-7&_nc_sid=7206a8&_nc_ohc=3DCmgb_NmZsAX_suDms&_nc_ht=scontent.fhan2-5.fna&oh=00_AfBNqiOpUiSTaQzFA2YkfK4Io_SnQXHds1Llzm1dmn_3Hw&oe=643A0D58"
+                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8cf6f09dda54783f53bdcccad0fd9e8c~c5_100x100.jpeg?x-expires=1681452000&x-signature=nK6eFprJGfqN9HNkOkOFILpmyT4%3D"
                 alt=""
                 fallback="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/4b4722d941112ab256d01a243bd56445~c5_100x100.jpeg?x-expires=1681380000&x-signature=bQMWUyRbovN6%2Bzx29dodLPdQ3eY%3D"
               />
