@@ -6,8 +6,8 @@ import "tippy.js/dist/tippy.css"; // optional
 import { faCircleXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Wrapper as PopperWrapper } from "../../../Poper";
-import AccountItem from "../../../AccountItem";
-import { SearchIcon } from "../../../Icons";
+import AccountItem from "../../../AccountItem/AccountItem";
+import { SearchIcon } from "../../../Icons/Icons";
 import { LIST_ACCOUNT } from "../../../../mockdata";
 import { useDebounce } from "../../../../hook";
 // import * as searchService from "../../../../apiServices/searchService";
@@ -21,17 +21,24 @@ function Search() {
   const [showResult, setShowResult] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const debounced = useDebounce(searchValue, 500);
+  const debouncedValue = useDebounce(searchValue, 500);
   const inputRef = useRef();
 
   const handleHideResult = () => {
     setShowResult(false);
   };
 
+  const handleChange = (event) => {
+    const searchValue = event.target.value;
+    if (!searchValue.startsWith(" ")) {
+      setSearchValue(searchValue);
+    }
+  };
+
   //API die
 
   //   useEffect(() => {
-  //     if (!debounced.trim()) {
+  //     if (!debouncedValue.trim()) {
   //       setSearchResult([]);
   //       return;
   //     }
@@ -39,27 +46,29 @@ function Search() {
   //     const fetchAPI = async () => {
   //       setLoading(true);
 
-  //       const result = await searchService.search(debounced);
+  //       const result = await searchService.search(debouncedValue);
   //       setSearchResult(result);
 
   //       setLoading(false);
   //     };
   //     fetchAPI();
-  //   }, [debounced]);
+  //   }, [debouncedValue]);
 
   //mock
   useEffect(() => {
-    if (debounced) {
+    if (debouncedValue) {
       setLoading(true);
       const results = LIST_ACCOUNT.filter((item) => {
-        return item.full_name.toLowerCase().includes(debounced.toLowerCase());
+        return item.full_name
+          .toLowerCase()
+          .includes(debouncedValue.toLowerCase());
       }).slice(0, 6);
       setSearchResult(results);
       setTimeout(() => {
         setLoading(false);
       }, 100);
     }
-  }, [debounced]);
+  }, [debouncedValue]);
 
   return (
     <HeadlessTippy
@@ -84,7 +93,7 @@ function Search() {
           value={searchValue}
           placeholder={t("Search accounts and videos")}
           spellCheck={false}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handleChange}
           onFocus={() => setShowResult(true)}
         />
         {!!searchValue && !loading && (

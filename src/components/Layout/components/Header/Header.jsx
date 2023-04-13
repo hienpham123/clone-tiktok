@@ -17,10 +17,10 @@ import {
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../Button";
-import Menu from "../../../Poper/Menu";
+import Menu from "../../../Poper/Menu/Menu";
 import { InboxIcon, MessageIcon, UploadIcon } from "../../../Icons";
 import Image from "../../../Images";
-import Search from "../Search";
+import Search from "../Search/Search";
 import config from "../../../../config";
 
 const cx = classNames.bind(styles);
