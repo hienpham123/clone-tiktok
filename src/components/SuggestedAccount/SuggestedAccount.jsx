@@ -11,7 +11,7 @@ function SuggestedAccount({ label, isSuggested }) {
   const [suggestedAccountList, setSuggestedAccountList] = useState([]);
 
   const handleSeeAll = () => {
-    setSuggestedAccountList(LIST_ACCOUNT.slice(0, 10));
+    setSuggestedAccountList(LIST_ACCOUNT);
   };
 
   const handleSeeLess = () => {
