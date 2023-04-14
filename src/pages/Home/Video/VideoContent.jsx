@@ -7,11 +7,15 @@ import { ShareIcon } from "../../../components/Icons";
 import { useElementOnScreen } from "../../../hook";
 
 const cx = classNames.bind(styles);
-const video = "public/videos/Download.mp4";
-
 function VideoContent({ data }) {
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
+  const [colorHeart, SetColorHeart] = useState(false);
+
+  const handleClickHeart = () => {
+    SetColorHeart(!colorHeart);
+  };
+
   const handleVideo = () => {
     if (playing) {
       videoRef.current.pause();
@@ -72,7 +76,12 @@ function VideoContent({ data }) {
 
         <div className={cx("detail")}>
           <div className={cx("background-icon")}>
-            <FontAwesomeIcon className={cx("icon")} icon={faHeart} />
+            <FontAwesomeIcon
+              onClick={handleClickHeart}
+              className={cx("icon")}
+              icon={faHeart}
+              style={{ color: colorHeart && "rgba(255, 59, 92, 1)" }}
+            />
           </div>
           <span className={cx("text")}>{data.likes}</span>
         </div>

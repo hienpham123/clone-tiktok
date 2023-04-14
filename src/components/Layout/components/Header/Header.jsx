@@ -15,6 +15,7 @@ import {
   faCoins,
   faGear,
   faSignOut,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../Button";
 import Menu from "../../../Poper/Menu/Menu";
@@ -22,6 +23,7 @@ import { InboxIcon, MessageIcon, UploadIcon } from "../../../Icons";
 import Image from "../../../Images";
 import Search from "../Search/Search";
 import config from "../../../../config";
+import SwitchButton from "../../../SwitchButton/SwitchButton";
 
 const cx = classNames.bind(styles);
 
@@ -93,6 +95,12 @@ function Header() {
       to: "/",
     },
     ...MENU_ITEMS,
+    {
+      icon: <FontAwesomeIcon icon={faMoon} />,
+      iconRight: <SwitchButton />,
+      title: "Dark Mode",
+      to: "/",
+    },
     {
       icon: <FontAwesomeIcon icon={faSignOut} />,
       title: "Log out",
