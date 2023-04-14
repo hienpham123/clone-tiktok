@@ -2,9 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Video.module.scss";
 import classNames from "classnames/bind";
-import { faCommentDots, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { ShareIcon } from "../../../components/Icons";
+import {
+  faCommentDots,
+  faHeart,
+  faShare,
+} from "@fortawesome/free-solid-svg-icons";
 import { useElementOnScreen } from "../../../hook";
+import BtnShareMore from "../../Profile/Information/BtnShareMore";
 
 const cx = classNames.bind(styles);
 function VideoContent({ data }) {
@@ -62,7 +66,7 @@ function VideoContent({ data }) {
       <div className={cx("icons")}>
         <div className={cx("detail")}>
           <div className={cx("background-icon")}>
-            <ShareIcon className={cx("icon")} />
+            <BtnShareMore isHomePage className={cx("icon")} />
           </div>
           <span className={cx("text")}>{data.shares}</span>
         </div>

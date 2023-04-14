@@ -20,18 +20,18 @@ export const LIST_ACTION_BTN_SHARE_MORE = [
   {
     title: "Send message",
     icon: <MessageIcon height={"1.6rem"} width={"1.6rem"} />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Report",
     icon: <ReportIcon />,
-    to: "/",
+    // to: "/",
     separate: true,
   },
   {
     title: "Block",
     icon: <FontAwesomeIcon icon={faBan} />,
-    to: "/",
+    // to: "/",
     separate: true,
   },
 ];
@@ -40,27 +40,27 @@ export const LIST_ACTION_BTN_SHARE_COLLAPSE = [
   {
     title: "Embed",
     icon: <EmbedIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Facebook",
     icon: <FacebookIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to WhatsApp",
     icon: <WhatsAppIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Twitter",
     icon: <TwitterIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Copy Link",
     icon: <CopyLinkIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "",
@@ -74,56 +74,56 @@ export const LIST_ACTION_BTN_SHARE_ALL = [
   {
     title: "Embed",
     icon: <EmbedIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Facebook",
     icon: <FacebookIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to WhatsApp",
     icon: <WhatsAppIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Twitter",
     icon: <TwitterIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Copy Link",
     icon: <CopyLinkIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Likedin",
     icon: <LikeEdinIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Reddit",
     icon: <RedditIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Telegram",
     icon: <TelegramIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Email",
     icon: <EmailIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Line",
     icon: <LineIcon />,
-    to: "/",
+    // to: "/",
   },
   {
     title: "Share to Pinterest",
     icon: <PinterestIcon />,
-    to: "/",
+    // to: "/",
   },
 ];

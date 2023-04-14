@@ -1,105 +1,111 @@
 .wrapper {
-    display: flex;
+  display: flex;
 }
 
 .top-content {
-    display: flex;
-    min-width: 523px;
+  display: flex;
+  min-width: 523px;
 }
 
 .avatar {
-    width: 116px;
-    height: 116px;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 116px;
+  height: 116px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .info {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .nick-name {
-    font-weight: 700;
-    font-size: 3.2rem;
-    line-height: 38px;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 38px;
 }
 
 .check {
-    font-size: 2rem;
-    color: #20d5ec;
-    margin-left: 4px;
-    margin-bottom: 4px;
+  font-size: 2rem;
+  color: #20d5ec;
+  margin-left: 4px;
+  margin-bottom: 4px;
 }
 
 .name {
-    font-weight: 600;
-    font-size: 1.8rem;
-    line-height: 25px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 25px;
 }
 
 .btn-follow {
-    margin-top: 15px;
-    min-width: 208px;
-    height: 36px;
-    line-height: 22px;
+  margin-top: 15px;
+  min-width: 208px;
+  height: 36px;
+  line-height: 22px;
 }
 
 .detail {
-    display: flex;
-    margin-top: 20px;
+  display: flex;
+  margin-top: 20px;
 }
 
 .text-detail + .text-detail {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .btn + .btn {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .container-info {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .text-info {
-    color: rgb(22, 24, 35);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    white-space: pre-line;
+  color: rgb(22, 24, 35);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  white-space: pre-line;
 }
 
 .icon {
-    margin-top: 2px;
-    margin-right: 5px;
+  margin-top: 2px;
+  margin-right: 5px;
 }
 
 .text-link {
-    font-size: 1.6rem;
-    font-weight: 700;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  font-size: 1.6rem;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .container-btn-share {
-    font-weight: 600;
-    font-size: 1.6rem;
-    line-height: 22px;
-    width: 280px;
-    padding: 8px 0px;
-    max-height: 448px;
-    overflow: auto;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 22px;
+  width: 280px;
+  padding: 8px 0px;
+  max-height: 448px;
+  overflow: auto;
 }
 
 .btn-down {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .container-btns {
-    display: flex;
-    max-height: 20px;
+  display: flex;
+  max-height: 20px;
+}
+
+.btn-share {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 9px;
 }

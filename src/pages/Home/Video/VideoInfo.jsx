@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Video.module.scss";
@@ -9,6 +10,12 @@ import PropTypes from "prop-types";
 const cx = classNames.bind(styles);
 
 function VideoInfo({ data }) {
+  const [isFollow, setIsFollow] = useState(false);
+
+  const handleToggleFollow = () => {
+    setIsFollow(!isFollow);
+  };
+
   return (
     <div className={cx("container-video-info")}>
       <Image className={cx("avatar")} src={data.avatar} alt="avt" />
@@ -31,8 +38,13 @@ function VideoInfo({ data }) {
         </div>
       </div>
       <div>
-        <Button small outline>
-          Follow
+        <Button
+          small
+          outline
+          onClick={handleToggleFollow}
+          style={{ color: isFollow && "rgb(22, 24, 35)" }}
+        >
+          {!isFollow ? "Follow" : "Following"}
         </Button>
       </div>
     </div>

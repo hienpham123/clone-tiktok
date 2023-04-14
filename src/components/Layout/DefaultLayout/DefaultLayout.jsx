@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import styles from "./DefaultLayout.module.scss";
@@ -7,25 +6,8 @@ import PropTypes from "prop-types";
 
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    document.body.className = theme;
-  }, [theme]);
-
   return (
-    <div
-      className={cx("wrapper")}
-      // style={{ background: theme ? "rgb(18, 18, 18)" : "" }}
-    >
+    <div className={cx("wrapper")}>
       <Header />
       <div className={cx("container")}>
         <Sidebar />

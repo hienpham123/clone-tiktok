@@ -50,7 +50,7 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
     title: "Feedback and Help",
-    to: "/feedback",
+    // to: "/feedback",
   },
   {
     icon: <FontAwesomeIcon icon={faKeyboard} />,
@@ -82,29 +82,24 @@ function Header() {
     {
       icon: <FontAwesomeIcon icon={faUser} />,
       title: "View Profile",
-      to: "/",
     },
     {
       icon: <FontAwesomeIcon icon={faCoins} />,
       title: "Get coins",
-      to: "/",
     },
     {
       icon: <FontAwesomeIcon icon={faGear} />,
       title: "Settings",
-      to: "/",
     },
     ...MENU_ITEMS,
     {
       icon: <FontAwesomeIcon icon={faMoon} />,
       iconRight: <SwitchButton />,
       title: "Dark Mode",
-      to: "/",
     },
     {
       icon: <FontAwesomeIcon icon={faSignOut} />,
       title: "Log out",
-      to: "/",
       separate: true,
     },
   ];
