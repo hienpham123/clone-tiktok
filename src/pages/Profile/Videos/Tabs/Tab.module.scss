@@ -1,0 +1,20 @@
+.wrapper {
+  //   display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  min-height: 490px;
+  align-items: flex-start;
+  min-width: 520px;
+  position: relative;
+  margin-left: -20px;
+}
+
+.video {
+  width: 210px;
+  height: 275px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+}
