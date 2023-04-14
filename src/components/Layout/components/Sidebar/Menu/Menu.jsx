@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 function Menu({ children }) {
-  return <nav>{children}</nav>;
+  return <nav style={{ marginTop: 20 }}>{children}</nav>;
 }
 
 Menu.propTypes = {
