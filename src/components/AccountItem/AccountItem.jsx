@@ -8,9 +8,13 @@ import Images from "../Images/Image";
 
 const cx = classNames.bind(styles);
 
-function AccountItem({ data }) {
+function AccountItem({ data, handleHideResult }) {
   return (
-    <Link to={`/@${data.nickname}`} className={cx("wrapper")}>
+    <Link
+      to={`/@${data.nickname}`}
+      className={cx("wrapper")}
+      onClick={handleHideResult}
+    >
       <Images className={cx("avatar")} src={data.avatar} alt={data.full_name} />
       <div className={cx("info")}>
         <h4 className={cx("name")}>
@@ -27,6 +31,7 @@ function AccountItem({ data }) {
 
 AccountItem.propsTypes = {
   data: PropsTypes.object.isRequired,
+  handleHideResult: PropsTypes.func,
 };
 
 export default AccountItem;

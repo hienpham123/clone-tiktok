@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 function MenuItem({ data, onClick }) {
   const classes = cx("menu-item", {
     separate: data.separate,
+    center: data.center,
   });
   return (
     <div>
