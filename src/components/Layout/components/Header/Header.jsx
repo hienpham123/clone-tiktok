@@ -2,6 +2,7 @@ import images from "../../../../assets/images";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react";
+import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -24,6 +25,8 @@ import Image from "../../../Images";
 import Search from "../Search/Search";
 import config from "../../../../config";
 import SwitchButton from "../../../SwitchButton/SwitchButton";
+import PopupInbox from "../../../PopupInbox/PopupInbox";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -62,6 +65,7 @@ function Header() {
   const { t, i18n, ready } = useTranslation();
   const { nickname } = useParams();
   const navigate = useNavigate();
+  const [click, setClick] = useState(true);
 
   const handleMenuChange = (item) => {
     switch (item.type) {
@@ -113,6 +117,7 @@ function Header() {
 
   return (
     <header className={cx("wrapper")}>
+      {/* <PopupInbox /> */}
       <div className={cx("inner")}>
         <Link
           to={config.routes.home}
@@ -135,12 +140,39 @@ function Header() {
                   <MessageIcon />
                 </button>
               </Tippy>
-              <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
-                <button className={cx("actions-btn")}>
-                  <InboxIcon />
-                  <span className={cx("badge")}>23</span>
-                </button>
-              </Tippy>
+              {click ? (
+                <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
+                  <button
+                    className={cx("actions-btn")}
+                    onClick={() => setClick(false)}
+                  >
+                    <InboxIcon />
+                    <span className={cx("badge")}>23</span>
+                  </button>
+                </Tippy>
+              ) : (
+                <HeadlessTippy
+                  visible
+                  interactive
+                  delay={[0, 50]}
+                  offset={[180, 0]}
+                  content="Inbox"
+                  placement="bottom"
+                  render={(attrs) => (
+                    <div tabIndex="-1" {...attrs}>
+                      <PopupInbox />
+                    </div>
+                  )}
+                >
+                  <button
+                    className={cx("actions-btn")}
+                    onClick={() => setClick(true)}
+                  >
+                    <InboxIcon />
+                    <span className={cx("badge")}>23</span>
+                  </button>
+                </HeadlessTippy>
+              )}
             </>
           ) : (
             <>
