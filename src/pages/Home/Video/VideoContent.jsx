@@ -1,68 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Video.module.scss";
 import classNames from "classnames/bind";
-import {
-  faCommentDots,
-  faHeart,
-  faShare,
-} from "@fortawesome/free-solid-svg-icons";
-import { useElementOnScreen } from "../../../hook";
+import { faCommentDots, faHeart } from "@fortawesome/free-solid-svg-icons";
 import BtnShareMore from "../../Profile/Information/BtnShareMore";
+import Video from "../../../components/Video/Video";
 
 const cx = classNames.bind(styles);
 function VideoContent({ data }) {
-  const videoRef = useRef();
-  const [playing, setPlaying] = useState(false);
   const [colorHeart, SetColorHeart] = useState(false);
 
   const handleClickHeart = () => {
     SetColorHeart(!colorHeart);
   };
 
-  const handleVideo = () => {
-    if (playing) {
-      videoRef.current.pause();
-      setPlaying(false);
-    } else {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  };
-
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
-  };
-  const isVisible = useElementOnScreen(options, videoRef);
-
-  useEffect(() => {
-    if (isVisible) {
-      if (!playing) {
-        videoRef.current.play();
-        setPlaying(true);
-      }
-    } else {
-      if (playing) {
-        videoRef.current.pause();
-        setPlaying(false);
-      }
-    }
-  }, [isVisible]);
-
   return (
     <div className={cx("container-content")}>
-      <video
-        ref={videoRef}
-        className={cx("video")}
-        loop
-        // autoPlay
-        // controls
-        // muted
-        src={data.video}
-        onClick={handleVideo}
-      ></video>
+      <Video className={cx("video")} loop src={data.video} onClick></Video>
       <div className={cx("icons")}>
         <div className={cx("detail")}>
           <div className={cx("background-icon")}>

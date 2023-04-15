@@ -1,3 +1,4 @@
+import Video from "../../../../components/Video/Video";
 import styles from "./Tab.module.scss";
 import classNames from "classnames/bind";
 
@@ -8,13 +9,14 @@ function TabVideos({ data }) {
     <div className={cx("wrapper")}>
       {(data || []).map((item, index) => {
         return (
-          <video
+          <Video
             key={index}
             className={cx("video")}
             // autoPlay
             // controls
+            isTab
             src={item}
-          ></video>
+          ></Video>
         );
       })}
     </div>
