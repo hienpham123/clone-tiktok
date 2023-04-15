@@ -14,9 +14,12 @@ import {
   LIST_ACTION_BTN_SHARE_COLLAPSE,
   LIST_ACTION_BTN_SHARE_MORE,
 } from "./lib";
+import { useParams } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 function BtnShareMore({ isHomePage }) {
+  const { nickname } = useParams();
+  const isMyProfile = nickname === "@hien_ho_102";
   const [listAction, setListAction] = useState([]);
 
   const handleSeeMoreOption = () => {
@@ -82,7 +85,9 @@ function BtnShareMore({ isHomePage }) {
         placement="bottom"
         render={(props) => renderPopupMore(props)}
       >
-        <div className={cx("btn")}>{!isHomePage && <MoreIcon />}</div>
+        <div className={cx("btn")}>
+          {!isHomePage && !isMyProfile && <MoreIcon />}
+        </div>
       </Tippy>
     </div>
   );

@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Video.module.scss";
 import classNames from "classnames/bind";
 import { faCommentDots, faHeart } from "@fortawesome/free-solid-svg-icons";
-import BtnShareMore from "../../Profile/Information/BtnShareMore";
-import Video from "../../../components/Video/Video";
+import BtnShareMore from "./../Profile/Information/BtnShareMore";
+import Video from "./../../components/Video/Video";
 
 const cx = classNames.bind(styles);
 function VideoContent({ data }) {

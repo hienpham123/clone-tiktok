@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 function TabLiked({ data }) {
   return (
     <div className={cx("wrapper")}>
-      {data.map((item, index) => {
+      {(data || []).map((item, index) => {
         return (
           <Video
             key={index}

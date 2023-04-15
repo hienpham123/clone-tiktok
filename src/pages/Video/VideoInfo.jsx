@@ -3,9 +3,9 @@ import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Video.module.scss";
 import classNames from "classnames/bind";
-import Button from "../../../components/Button/Button";
-import Image from "../../../components/Images/Image";
 import PropTypes from "prop-types";
+import Button from "../../components/Button/Button";
+import Image from "../../components/Images/Image";
 
 const cx = classNames.bind(styles);
 

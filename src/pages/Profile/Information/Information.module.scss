@@ -45,6 +45,37 @@
   line-height: 22px;
 }
 
+.btn-edit-profile {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  color: rgb(22, 24, 35);
+  border-color: rgba(22, 24, 35, 0.12);
+  background-color: rgb(255, 255, 255);
+  min-height: 36px;
+  font-weight: 600;
+  font-family: SofiaPro, PingFangSC, sans-serif;
+  position: relative;
+  -webkit-box-pack: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 36px;
+  font-size: 16px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 16px;
+  min-width: 136px;
+  line-height: 24px;
+  margin-right: 8px;
+
+  &:hover {
+    border-color: rgb(208, 209, 211);
+    background-color: rgb(248, 248, 248);
+  }
+}
 .detail {
   display: flex;
   margin-top: 20px;

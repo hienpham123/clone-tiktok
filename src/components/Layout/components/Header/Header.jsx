@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   faEllipsisVertical,
@@ -61,12 +61,17 @@ const MENU_ITEMS = [
 function Header() {
   const { t, i18n, ready } = useTranslation();
   const { nickname } = useParams();
+  const navigate = useNavigate();
 
   const handleMenuChange = (item) => {
     switch (item.type) {
       case "language":
         // TODO:
         changeLanguage(item.code);
+        break;
+
+      case "myProfile":
+        navigate("/@hien_ho_102");
         break;
       default:
     }
@@ -83,6 +88,7 @@ function Header() {
     {
       icon: <FontAwesomeIcon icon={faUser} />,
       title: "View Profile",
+      type: "myProfile",
     },
     {
       icon: <FontAwesomeIcon icon={faCoins} />,
