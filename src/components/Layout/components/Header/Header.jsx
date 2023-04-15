@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   faEllipsisVertical,
@@ -60,6 +60,7 @@ const MENU_ITEMS = [
 
 function Header() {
   const { t, i18n, ready } = useTranslation();
+  const { nickname } = useParams();
 
   const handleMenuChange = (item) => {
     switch (item.type) {
@@ -107,7 +108,11 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <Link to={config.routes.home} className={cx("logo-link")}>
+        <Link
+          to={config.routes.home}
+          className={cx("logo-link")}
+          style={nickname && { marginLeft: -80, marginRight: 80 }}
+        >
           <Image src={images.logo} alt="logo" />
         </Link>
         <Search />

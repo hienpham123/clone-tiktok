@@ -12,8 +12,8 @@ function TabLiked({ data }) {
             key={index}
             className={cx("video")}
             // autoPlay
-            // controls
-            src={item.video}
+            controls
+            src={item}
           ></video>
         );
       })}
