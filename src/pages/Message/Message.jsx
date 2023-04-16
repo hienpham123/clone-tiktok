@@ -10,6 +10,7 @@ import Image from "../../components/Images/Image";
 import { faFaceLaugh } from "@fortawesome/free-regular-svg-icons";
 import Video from "../../components/Video/Video";
 import { useNavigate } from "react-router-dom";
+import MoreBtn from "./BtnMore/MoreIcon";
 
 const cx = classNames.bind(styles);
 
@@ -59,6 +60,7 @@ function Message() {
               You shared a video 4/12/2023
             </span>
           </div>
+          <MoreBtn />
         </div>
       </div>
       <div className={cx("right-box")}>

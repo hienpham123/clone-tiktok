@@ -1,0 +1,26 @@
+.wrapper {
+  position: absolute;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
+  padding: 8px 0px;
+  z-index: 999;
+  top: 48px;
+  min-width: 200px;
+  cursor: pointer;
+  right: 8px;
+}
+
+.container-btn {
+  width: 23px;
+  height: 23px;
+  margin-left: 20px;
+}
+
+.btn {
+  display: none;
+}
+
+.container-btn:hover .btn {
+  display: block;
+}
