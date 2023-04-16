@@ -11,6 +11,8 @@ import { faFaceLaugh } from "@fortawesome/free-regular-svg-icons";
 import Video from "../../components/Video/Video";
 import { useNavigate } from "react-router-dom";
 import MoreBtn from "./BtnMore/MoreIcon";
+import Popup from "./Popup/Popup";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +22,14 @@ const you =
   "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/59ca64765bf927078770062798ba507e~c5_100x100.jpeg?x-expires=1681732800&x-signature=OYkSZFH2E848bd0bClpWpfWlJsE%3D";
 function Message() {
   const navigate = useNavigate();
+  const [isOpenPopup, setIsOpenPopup] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsOpenPopup(true);
+  };
+  const handleClose = () => {
+    setIsOpenPopup(false);
+  };
 
   const handleBack = () => {
     navigate("/");
@@ -34,7 +44,8 @@ function Message() {
           <div className={cx("title-left-box")}>Messages</div>
           <div>
             <FontAwesomeIcon
-              style={{ width: "25px", height: "25px" }}
+              onClick={handleOpenPopup}
+              style={{ width: "25px", height: "25px", cursor: "pointer" }}
               icon={faGear}
             />
           </div>
@@ -358,6 +369,8 @@ function Message() {
           </div>
         </div>
       </div>
+
+      {isOpenPopup && <Popup handleClose={handleClose} />}
     </div>
   );
 }
