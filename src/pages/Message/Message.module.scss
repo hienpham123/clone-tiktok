@@ -24,7 +24,7 @@
   display: flex;
   flex-direction: column;
   width: 356px;
-  height: 505px;
+  // height: 100%;
   background: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
   border-radius: 8px;
@@ -96,7 +96,7 @@
   display: flex;
   flex-direction: column;
   width: 647px;
-  height: 505px;
+  height: 100%;
   background: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
   border-radius: 8px;
@@ -120,7 +120,7 @@
   overflow-y: auto;
   width: 100%;
   padding: 24px 0px 16px;
-  //   background-color: red;
+  max-height: 505px;
 }
 
 .date-main-right {
@@ -176,5 +176,11 @@
 
   &:active {
     border: 1px solid rgba(22, 24, 35, 0.2);
+  }
+}
+
+@media only screen and (max-height: 768px) {
+  .right-box {
+    height: 505px;
   }
 }
