@@ -6,6 +6,7 @@ import Image from "../Images/Image";
 import Button from "../Button/Button";
 import { useState } from "react";
 import { MentionsAndTagIcon } from "../Icons";
+import Loading from "../Loading/Loading";
 
 const cx = classNames.bind(styles);
 
@@ -111,6 +112,7 @@ const noti_comment = [
 
 function PopupInbox() {
   const [indexActive, setIndexActive] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className={cx("wrapper")}>
@@ -128,7 +130,13 @@ function PopupInbox() {
                     color: index === indexActive && "rgb(255, 255, 255)",
                   }}
                   key={index}
-                  onClick={() => setIndexActive(index)}
+                  onClick={() => {
+                    setIndexActive(index);
+                    setIsLoading(true);
+                    setTimeout(() => {
+                      setIsLoading(false);
+                    }, 1000);
+                  }}
                 >
                   {item}
                 </div>
@@ -137,255 +145,283 @@ function PopupInbox() {
           </div>
         </div>
 
-        {indexActive === 0 && (
-          <div className={cx("bottom")}>
-            <div className={cx("title-bottom")}>This month</div>
+        {isLoading ? (
+          <div style={{ marginLeft: "38%" }}>
+            <Loading />
+          </div>
+        ) : (
+          <div>
+            {indexActive === 0 && (
+              <div className={cx("bottom")}>
+                <div className={cx("title-bottom")}>This month</div>
 
-            <div className={cx("bg-noti")}>
-              <div className={cx("bg-icon")}>
-                <FontAwesomeIcon style={{ color: "white" }} icon={faMessage} />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  marginLeft: 10,
-                }}
-              >
-                <span style={{ fontSize: "1.4rem", fontWeight: 700 }}>
-                  System Notifications
-                </span>
-                <span className={cx("text-noti")}>
-                  Account Updated : Tài khoản của bạn đã được đăng nhập từ thiết
-                  bị iphone 11 pro max
-                </span>
-              </div>
-            </div>
-
-            <div className={cx("title-bottom")}>Previous</div>
-
-            {noti_comment.map((item, index) => {
-              return (
-                item.type === "follow" && (
-                  <div key={index} className={cx("bg-content-btn")}>
-                    <Image className={cx("avatar")} src={item.avatar} />
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        marginLeft: -73,
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "1.4rem",
-                          fontWeight: 700,
-                        }}
-                      >
-                        {item.nickname}
-                      </span>
-                      <span className={cx("text-noti")}>{item.commented}</span>
-                    </div>
-                    {item.button}
+                <div className={cx("bg-noti")}>
+                  <div className={cx("bg-icon")}>
+                    <FontAwesomeIcon
+                      style={{ color: "white" }}
+                      icon={faMessage}
+                    />
                   </div>
-                )
-              );
-            })}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      marginLeft: 10,
+                    }}
+                  >
+                    <span style={{ fontSize: "1.4rem", fontWeight: 700 }}>
+                      System Notifications
+                    </span>
+                    <span className={cx("text-noti")}>
+                      Account Updated : Tài khoản của bạn đã được đăng nhập từ
+                      thiết bị iphone 11 pro max
+                    </span>
+                  </div>
+                </div>
 
-            {noti_comment.map((item, index) => {
-              return (
-                item.type !== "follow" && (
-                  <div key={index} className={cx("bg-contents")}>
-                    <Image className={cx("avatar")} src={item.avatar} />
+                <div className={cx("title-bottom")}>Previous</div>
 
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        marginLeft: -10,
-                        width: 215,
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "1.4rem",
-                          fontWeight: 700,
-                        }}
-                      >
-                        {item.nickname}
-                      </span>
-                      <div style={{ display: "flex", flexDirection: "column" }}>
-                        <span
+                {noti_comment.map((item, index) => {
+                  return (
+                    item.type === "follow" && (
+                      <div key={index} className={cx("bg-content-btn")}>
+                        <Image className={cx("avatar")} src={item.avatar} />
+                        <div
                           style={{
                             display: "flex",
-                            fontSize: "1.4rem",
-                            fontWeight: 500,
-                            marginRight: 5,
+                            flexDirection: "column",
+                            marginLeft: -73,
                           }}
-                        >
-                          {item.action}
-                          <span className={cx("text-noti")}>{item.date}</span>
-                        </span>
-                        <span className={cx("text-noti")}>
-                          {item.commented}
-                        </span>
-                      </div>
-                    </div>
-
-                    <Image className={cx("image")} src={item.image} />
-                  </div>
-                )
-              );
-            })}
-          </div>
-        )}
-
-        {indexActive === 1 && (
-          <div className={cx("bottom")}>
-            <div className={cx("title-bottom")}>Previous</div>
-            {noti_comment.map((item, index) => {
-              return (
-                item.type === "like" && (
-                  <>
-                    <div key={index} className={cx("bg-contents")}>
-                      <Image className={cx("avatar")} src={item.avatar} />
-
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          marginLeft: -10,
-                          width: 215,
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontSize: "1.4rem",
-                            fontWeight: 700,
-                          }}
-                        >
-                          {item.nickname}
-                        </span>
-                        <div
-                          style={{ display: "flex", flexDirection: "column" }}
                         >
                           <span
                             style={{
-                              display: "flex",
                               fontSize: "1.4rem",
-                              fontWeight: 500,
-                              marginRight: 5,
+                              fontWeight: 700,
                             }}
                           >
-                            {item.action}
-                            <span className={cx("text-noti")}>{item.date}</span>
+                            {item.nickname}
                           </span>
                           <span className={cx("text-noti")}>
                             {item.commented}
                           </span>
                         </div>
+                        {item.button}
                       </div>
+                    )
+                  );
+                })}
 
-                      <Image className={cx("image")} src={item.image} />
-                    </div>
-                  </>
-                )
-              );
-            })}
-          </div>
-        )}
+                {noti_comment.map((item, index) => {
+                  return (
+                    item.type !== "follow" && (
+                      <div key={index} className={cx("bg-contents")}>
+                        <Image className={cx("avatar")} src={item.avatar} />
 
-        {indexActive === 2 && (
-          <div className={cx("bottom")}>
-            <div className={cx("title-bottom")}>Previous</div>
-            {noti_comment.map((item, index) => {
-              return (
-                item.type === "comment" && (
-                  <div key={index} className={cx("bg-contents")}>
-                    <Image className={cx("avatar")} src={item.avatar} />
-
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        marginLeft: -10,
-                        width: 215,
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "1.4rem",
-                          fontWeight: 700,
-                        }}
-                      >
-                        {item.nickname}
-                      </span>
-                      <div style={{ display: "flex", flexDirection: "column" }}>
-                        <span
+                        <div
                           style={{
                             display: "flex",
-                            fontSize: "1.4rem",
-                            fontWeight: 500,
-                            marginRight: 5,
+                            flexDirection: "column",
+                            marginLeft: -10,
+                            width: 215,
                           }}
                         >
-                          {item.action}
-                          <span className={cx("text-noti")}>{item.date}</span>
-                        </span>
-                        <span className={cx("text-noti")}>
-                          {item.commented}
-                        </span>
+                          <span
+                            style={{
+                              fontSize: "1.4rem",
+                              fontWeight: 700,
+                            }}
+                          >
+                            {item.nickname}
+                          </span>
+                          <div
+                            style={{ display: "flex", flexDirection: "column" }}
+                          >
+                            <span
+                              style={{
+                                display: "flex",
+                                fontSize: "1.4rem",
+                                fontWeight: 500,
+                                marginRight: 5,
+                              }}
+                            >
+                              {item.action}
+                              <span className={cx("text-noti")}>
+                                {item.date}
+                              </span>
+                            </span>
+                            <span className={cx("text-noti")}>
+                              {item.commented}
+                            </span>
+                          </div>
+                        </div>
+
+                        <Image className={cx("image")} src={item.image} />
                       </div>
-                    </div>
+                    )
+                  );
+                })}
+              </div>
+            )}
 
-                    <Image className={cx("image")} src={item.image} />
-                  </div>
-                )
-              );
-            })}
-          </div>
-        )}
+            {indexActive === 1 && (
+              <div className={cx("bottom")}>
+                <div className={cx("title-bottom")}>Previous</div>
+                {noti_comment.map((item, index) => {
+                  return (
+                    item.type === "like" && (
+                      <>
+                        <div key={index} className={cx("bg-contents")}>
+                          <Image className={cx("avatar")} src={item.avatar} />
 
-        {indexActive === 3 && (
-          <div className={cx("bg-mention")}>
-            <MentionsAndTagIcon />
-            <div className={cx("text-mention-1")}>Mentions of You</div>
-            <div className={cx("text-mention-2")}>
-              When someone mentions you, you'll see it here
-            </div>
-          </div>
-        )}
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              marginLeft: -10,
+                              width: 215,
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontSize: "1.4rem",
+                                fontWeight: 700,
+                              }}
+                            >
+                              {item.nickname}
+                            </span>
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                              }}
+                            >
+                              <span
+                                style={{
+                                  display: "flex",
+                                  fontSize: "1.4rem",
+                                  fontWeight: 500,
+                                  marginRight: 5,
+                                }}
+                              >
+                                {item.action}
+                                <span className={cx("text-noti")}>
+                                  {item.date}
+                                </span>
+                              </span>
+                              <span className={cx("text-noti")}>
+                                {item.commented}
+                              </span>
+                            </div>
+                          </div>
 
-        {indexActive === 4 && (
-          <div>
-            <div className={cx("title-bottom")}>Previous</div>
-            {noti_comment.map((item, index) => {
-              return (
-                item.type === "follow" && (
-                  <div key={index} className={cx("bg-content-btn")}>
-                    <Image className={cx("avatar")} src={item.avatar} />
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        marginLeft: -73,
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "1.4rem",
-                          fontWeight: 700,
-                        }}
-                      >
-                        {item.nickname}
-                      </span>
-                      <span className={cx("text-noti")}>{item.commented}</span>
-                    </div>
-                    {item.button}
-                  </div>
-                )
-              );
-            })}
+                          <Image className={cx("image")} src={item.image} />
+                        </div>
+                      </>
+                    )
+                  );
+                })}
+              </div>
+            )}
+
+            {indexActive === 2 && (
+              <div className={cx("bottom")}>
+                <div className={cx("title-bottom")}>Previous</div>
+                {noti_comment.map((item, index) => {
+                  return (
+                    item.type === "comment" && (
+                      <div key={index} className={cx("bg-contents")}>
+                        <Image className={cx("avatar")} src={item.avatar} />
+
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            marginLeft: -10,
+                            width: 215,
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.4rem",
+                              fontWeight: 700,
+                            }}
+                          >
+                            {item.nickname}
+                          </span>
+                          <div
+                            style={{ display: "flex", flexDirection: "column" }}
+                          >
+                            <span
+                              style={{
+                                display: "flex",
+                                fontSize: "1.4rem",
+                                fontWeight: 500,
+                                marginRight: 5,
+                              }}
+                            >
+                              {item.action}
+                              <span className={cx("text-noti")}>
+                                {item.date}
+                              </span>
+                            </span>
+                            <span className={cx("text-noti")}>
+                              {item.commented}
+                            </span>
+                          </div>
+                        </div>
+
+                        <Image className={cx("image")} src={item.image} />
+                      </div>
+                    )
+                  );
+                })}
+              </div>
+            )}
+
+            {indexActive === 3 && (
+              <div className={cx("bg-mention")}>
+                <MentionsAndTagIcon />
+                <div className={cx("text-mention-1")}>Mentions of You</div>
+                <div className={cx("text-mention-2")}>
+                  When someone mentions you, you'll see it here
+                </div>
+              </div>
+            )}
+
+            {indexActive === 4 && (
+              <div>
+                <div className={cx("title-bottom")}>Previous</div>
+                {noti_comment.map((item, index) => {
+                  return (
+                    item.type === "follow" && (
+                      <div key={index} className={cx("bg-content-btn")}>
+                        <Image className={cx("avatar")} src={item.avatar} />
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            marginLeft: -73,
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.4rem",
+                              fontWeight: 700,
+                            }}
+                          >
+                            {item.nickname}
+                          </span>
+                          <span className={cx("text-noti")}>
+                            {item.commented}
+                          </span>
+                        </div>
+                        {item.button}
+                      </div>
+                    )
+                  );
+                })}
+              </div>
+            )}
           </div>
         )}
       </div>
