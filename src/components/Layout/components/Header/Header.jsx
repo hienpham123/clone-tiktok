@@ -67,10 +67,14 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const { t, i18n, ready } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { nickname } = useParams();
   const navigate = useNavigate();
   const [click, setClick] = useState(true);
+
+  const handleToMessage = () => {
+    navigate("/message");
+  };
 
   const handleMenuChange = (item) => {
     switch (item.type) {
@@ -122,7 +126,6 @@ function Header() {
 
   return (
     <header className={cx("wrapper")}>
-      {/* <PopupInbox /> */}
       <div className={cx("inner")}>
         <Link
           to={config.routes.home}
@@ -141,7 +144,7 @@ function Header() {
                 </button>
               </Tippy>
               <Tippy delay={[0, 50]} content="Message" placement="bottom">
-                <button className={cx("actions-btn")}>
+                <button className={cx("actions-btn")} onClick={handleToMessage}>
                   <MessageIcon />
                 </button>
               </Tippy>
