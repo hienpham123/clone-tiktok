@@ -11,16 +11,15 @@
   right: 0;
   width: 375px;
   height: 639px;
-  padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0.5px 1px 0px rgba(22, 24, 35, 0.12);
   max-height: 545px;
 }
 
 .top {
-  //   padding-top: 24px;
   flex: 0 0 auto;
-  //   padding-left: 16px;
+  padding-left: 16px;
+  padding-top: 20px;
 }
 
 .text-title {
@@ -35,12 +34,10 @@
 .container-btn {
   display: flex;
   flex-wrap: wrap;
-  padding: 16px 0px;
+  padding: 16px 0px 0px 0px;
 }
 
 .btn-title {
-  //   color: rgb(255, 255, 255);
-  //   background: rgb(22, 24, 35);
   color: rgb(22, 24, 35);
   background: rgba(22, 24, 35, 0.06);
   font-weight: 600;
@@ -68,6 +65,27 @@
   font-size: 1.6rem;
   line-height: 20px;
   margin-top: 8px;
+  padding-left: 16px;
+}
+
+.bg-content-btn {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  padding: 10px 0px 10px 16px;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.bg-noti {
+  display: flex;
+  padding: 10px 16px;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
 }
 
 .bg-icon {
@@ -95,6 +113,17 @@
   color: rgba(22, 24, 35, 0.5);
   max-height: 130px;
   word-break: break-word;
+}
+
+.bg-contents {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  padding: 5px 16px;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
 }
 
 .avatar {
@@ -127,6 +156,7 @@
   box-sizing: border-box;
   align-self: center;
   flex: 0 0 auto;
+  margin-right: 16px;
 }
 
 .image {
@@ -134,4 +164,28 @@
   height: 56px;
   background: center center / cover no-repeat;
   border-radius: 2px;
+}
+
+.bg-mention {
+  display: flex;
+  position: relative;
+  top: 15%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-mention-1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 20px;
+}
+
+.text-mention-2 {
+  color: rgba(22, 24, 35, 0.75);
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 12px;
+  text-align: center;
 }

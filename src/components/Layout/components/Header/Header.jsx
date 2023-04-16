@@ -20,7 +20,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../Button";
 import Menu from "../../../Poper/Menu/Menu";
-import { InboxIcon, MessageIcon, UploadIcon } from "../../../Icons";
+import {
+  InboxBlackIcon,
+  InboxIcon,
+  MessageIcon,
+  UploadIcon,
+} from "../../../Icons";
 import Image from "../../../Images";
 import Search from "../Search/Search";
 import config from "../../../../config";
@@ -144,7 +149,11 @@ function Header() {
                 <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                   <button
                     className={cx("actions-btn")}
-                    onClick={() => setClick(false)}
+                    onClick={() => {
+                      setTimeout(() => {
+                        setClick(false);
+                      }, 300);
+                    }}
                   >
                     <InboxIcon />
                     <span className={cx("badge")}>23</span>
@@ -168,7 +177,7 @@ function Header() {
                     className={cx("actions-btn")}
                     onClick={() => setClick(true)}
                   >
-                    <InboxIcon />
+                    <InboxBlackIcon />
                     <span className={cx("badge")}>23</span>
                   </button>
                 </HeadlessTippy>
