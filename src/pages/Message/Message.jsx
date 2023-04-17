@@ -23,6 +23,7 @@ const you =
 function Message() {
   const navigate = useNavigate();
   const [isOpenPopup, setIsOpenPopup] = useState(false);
+  const [isOpenChat, setIsOpenChat] = useState(false);
 
   const handleOpenPopup = () => {
     setIsOpenPopup(true);
@@ -50,7 +51,10 @@ function Message() {
             />
           </div>
         </div>
-        <div className={cx("bottom-left-box")}>
+        <div
+          className={cx("bottom-left-box")}
+          onClick={() => setIsOpenChat(!isOpenChat)}
+        >
           <Image
             style={{
               width: 56,
@@ -74,301 +78,306 @@ function Message() {
           <MoreBtn />
         </div>
       </div>
-      <div className={cx("right-box")}>
-        <div className={cx("top-right-box")}>
-          <div style={{ display: "flex " }}>
-            <Image
-              style={{
-                width: 48,
-                height: 48,
-                borderRadius: "50%",
-                objectFit: "cover",
-              }}
-              src={you}
-            />
+
+      {isOpenChat ? (
+        <div className={cx("right-box")}>
+          <div className={cx("top-right-box")}>
+            <div style={{ display: "flex " }}>
+              <Image
+                style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                }}
+                src={you}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginLeft: 13,
+                }}
+              >
+                <span className={cx("text-title")} style={{ fontSize: 18 }}>
+                  đỗ hanutest thì đổi tên
+                </span>
+                <span style={{ fontSize: 16, color: "rgba(22, 24, 35, 1)" }}>
+                  @ khongduocbeo
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className={cx("main-right-box")}>
+            <span className={cx("date-main-right")}>April 12, 2023 13:25</span>
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                marginLeft: 13,
+                flexDirection: "row-reverse",
+                paddingRight: 20,
               }}
             >
-              <span className={cx("text-title")} style={{ fontSize: 18 }}>
-                đỗ hanutest thì đổi tên
-              </span>
-              <span style={{ fontSize: 16, color: "rgba(22, 24, 35, 1)" }}>
-                @ khongduocbeo
-              </span>
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <div
+                className={cx("box-chat")}
+                style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              >
+                Chao` nka
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className={cx("main-right-box")}>
-          <span className={cx("date-main-right")}>April 12, 2023 13:25</span>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              paddingRight: 20,
-            }}
-          >
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
             <div
-              className={cx("box-chat")}
-              style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              style={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                paddingRight: 70,
+                marginTop: 5,
+              }}
             >
-              Chao` nka
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              paddingRight: 70,
-              marginTop: 5,
-            }}
-          >
-            <Image
-              style={{
-                width: 17,
-                height: 17,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
-            <FontAwesomeIcon
-              style={{ color: "rgb(254, 44, 85)" }}
-              icon={faHeart}
-            />
-          </div>
-
-          <div style={{ display: "flex" }}>
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={you}
-            />
-            <div className={cx("box-chat")}> ? </div>
-          </div>
-
-          <div style={{ display: "flex", marginTop: 15 }}>
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={you}
-            />
-            <div className={cx("box-chat")}> chào cục cứt </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              marginTop: 15,
-              paddingRight: 20,
-            }}
-          >
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
-            <div
-              className={cx("box-chat")}
-              style={{ background: "rgba(22, 24, 35, 0.06)" }}
-            >
-              á à
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              marginTop: 15,
-              paddingRight: 20,
-            }}
-          >
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
-            <div
-              className={cx("box-chat")}
-              style={{ background: "rgba(22, 24, 35, 0.06)" }}
-            >
-              cứt đâu
-            </div>
-          </div>
-
-          <div style={{ display: "flex", marginTop: 15 }}>
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={you}
-            />
-            <div style={{ marginLeft: 10 }}>
-              <Video
-                style={{ width: 180, height: 320, borderRadius: 10 }}
-                src="../../../public/videos/phuongnhi.mp4"
+              <Image
+                style={{
+                  width: 17,
+                  height: 17,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <FontAwesomeIcon
+                style={{ color: "rgb(254, 44, 85)" }}
+                icon={faHeart}
               />
             </div>
-          </div>
 
-          <span className={cx("date-main-right")}>April 12, 2023 18:36</span>
+            <div style={{ display: "flex" }}>
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={you}
+              />
+              <div className={cx("box-chat")}> ? </div>
+            </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              paddingRight: 20,
-              marginTop: 15,
-            }}
-          >
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
+            <div style={{ display: "flex", marginTop: 15 }}>
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={you}
+              />
+              <div className={cx("box-chat")}> chào cục cứt </div>
+            </div>
+
             <div
-              className={cx("box-chat")}
-              style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              style={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                marginTop: 15,
+                paddingRight: 20,
+              }}
             >
-              Chơi ik
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <div
+                className={cx("box-chat")}
+                style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              >
+                á à
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                marginTop: 15,
+                paddingRight: 20,
+              }}
+            >
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <div
+                className={cx("box-chat")}
+                style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              >
+                cứt đâu
+              </div>
+            </div>
+
+            <div style={{ display: "flex", marginTop: 15 }}>
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={you}
+              />
+              <div style={{ marginLeft: 10 }}>
+                <Video
+                  style={{ width: 180, height: 320, borderRadius: 10 }}
+                  src="../../../public/videos/phuongnhi.mp4"
+                />
+              </div>
+            </div>
+
+            <span className={cx("date-main-right")}>April 12, 2023 18:36</span>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                paddingRight: 20,
+                marginTop: 15,
+              }}
+            >
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <div
+                className={cx("box-chat")}
+                style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              >
+                Chơi ik
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                paddingRight: 20,
+                marginTop: 15,
+              }}
+            >
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <div
+                className={cx("box-chat")}
+                style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              >
+                Nta 2k5 đã z ui
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                paddingRight: 20,
+                marginTop: 15,
+              }}
+            >
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <div
+                className={cx("box-chat")}
+                style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              >
+                Mk thì 2k1…
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                paddingRight: 20,
+                marginTop: 15,
+              }}
+            >
+              <Image
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginLeft: 10,
+                }}
+                src={me}
+              />
+              <div
+                className={cx("box-chat")}
+                style={{ background: "rgba(22, 24, 35, 0.06)" }}
+              >
+                Haizzz
+              </div>
             </div>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              paddingRight: 20,
-              marginTop: 15,
-            }}
-          >
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
-            <div
-              className={cx("box-chat")}
-              style={{ background: "rgba(22, 24, 35, 0.06)" }}
-            >
-              Nta 2k5 đã z ui
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              paddingRight: 20,
-              marginTop: 15,
-            }}
-          >
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
-            <div
-              className={cx("box-chat")}
-              style={{ background: "rgba(22, 24, 35, 0.06)" }}
-            >
-              Mk thì 2k1…
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              paddingRight: 20,
-              marginTop: 15,
-            }}
-          >
-            <Image
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginLeft: 10,
-              }}
-              src={me}
-            />
-            <div
-              className={cx("box-chat")}
-              style={{ background: "rgba(22, 24, 35, 0.06)" }}
-            >
-              Haizzz
+          <div className={cx("input-right")}>
+            <div className={cx("input")}>
+              <input
+                style={{ background: "none" }}
+                placeholder="Send a message..."
+              />
+              <FontAwesomeIcon icon={faFaceLaugh} />
             </div>
           </div>
         </div>
-
-        <div className={cx("input-right")}>
-          <div className={cx("input")}>
-            <input
-              style={{ background: "none" }}
-              placeholder="Send a message..."
-            />
-            <FontAwesomeIcon icon={faFaceLaugh} />
-          </div>
-        </div>
-      </div>
+      ) : (
+        <div className={cx("right-box2")}></div>
+      )}
 
       {isOpenPopup && <Popup handleClose={handleClose} />}
     </div>

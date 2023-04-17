@@ -183,10 +183,26 @@
   .right-box {
     height: 505px;
   }
+  .right-box2 {
+    height: 505px;
+  }
 }
 
 @media only screen and (max-height: 768px) {
   .main-right-box {
     max-height: 505px;
   }
+}
+
+.right-box2 {
+  position: relative;
+  flex-shrink: 0;
+  top: 100;
+  display: flex;
+  flex-direction: column;
+  width: 647px;
+  height: 880px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+  border-radius: 8px;
 }
