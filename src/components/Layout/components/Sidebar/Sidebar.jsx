@@ -12,11 +12,17 @@ import {
 } from "../../../Icons";
 import config from "../../../../config";
 import { SuggestedAccount } from "../../../SuggestedAccount";
+import { useParams } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 function Sidebar() {
+  const { nickname } = useParams();
+
   return (
-    <aside className={cx("wrapper")}>
+    <aside
+      className={cx("wrapper")}
+      style={nickname && { width: 300, left: 10 }}
+    >
       <Menu>
         <MenuItem
           title="For Your"

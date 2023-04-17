@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import "./SwitchButton.css";
 
 function SwitchButton() {
-  const [value, setValue] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const currentTheme = localStorage.getItem("theme") || "light";
+  const [value, setValue] = useState(Boolean(currentTheme === "dark"));
+  const [theme, setTheme] = useState(currentTheme);
 
-  const toggleTheme = () => {
+  const handleToggleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
     } else {
@@ -23,7 +24,7 @@ function SwitchButton() {
         className={`checkbox ${value && "checkbox--on"}`}
         onClick={() => {
           setValue(!value);
-          toggleTheme();
+          handleToggleTheme();
         }}
       >
         <div className="checkbox__ball"></div>

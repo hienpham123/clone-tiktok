@@ -1,0 +1,52 @@
+.modal_content {
+  position: absolute;
+  top: 7%;
+  left: 15%;
+  width: 700px;
+  height: 376px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+  border-radius: 8px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 23px;
+  border-bottom: 1px solid rgba(22, 24, 35, 0.34);
+}
+.title {
+  font-size: 2.4rem;
+  line-height: 32px;
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 700;
+}
+
+.main {
+  border-bottom: 1px solid rgba(22, 24, 35, 0.34);
+}
+
+.text-1 {
+  width: 100%;
+  padding: 16px 0px 0px;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 600;
+}
+
+.text-2 {
+  padding-top: 4px;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(22, 24, 35, 0.5);
+  word-break: break-word;
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+}
+
+.bottom {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  padding-top: 20px;
+}

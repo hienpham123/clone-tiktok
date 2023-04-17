@@ -1,0 +1,40 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  width: 100%;
+}
+
+.tab-buttons button {
+  min-width: 229px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(22, 24, 35);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease 0s;
+}
+
+.tab-buttons button.active {
+  color: rgb(22, 24, 35);
+  border-bottom: 2px solid rgb(22, 24, 35);
+}
+
+.tab-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  /* color: var(--text-color); */
+}
+
+.tab-content {
+  padding: 16px;
+  border-radius: 4px;
+}

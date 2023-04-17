@@ -301,4 +301,18 @@ export const LIST_VIDEO_HOME = [
     comments: "502",
     shares: "100",
   },
+  {
+    id: 21,
+    nick_name: "han.lua",
+    full_name: "𝗚𝗶𝗮 𝗛𝗮̂𝗻 🐰",
+    avatar:
+      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/c1818848d635458fa191b48036a87673~c5_100x100.jpeg?x-expires=1681650000&x-signature=rJTV4H3hRAh%2Brxfdtu5Wb8xbaB4%3D",
+    content: "Màu chím này chinh toá 🌷",
+    hag_tag: "#viral #outfit #fyp",
+    music: "nhạc nền - Lê Phương Trinh",
+    video: "/public/videos/giahan.mp4",
+    likes: "199",
+    comments: "28",
+    shares: "34",
+  },
 ];

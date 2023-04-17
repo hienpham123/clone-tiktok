@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
 import classNames from "classnames/bind";
-import Video from "./Video/Video";
 import { LIST_VIDEO_HOME } from "../../mockdatahome";
+import Video from "../Video/Video";
 
 const cx = classNames.bind(styles);
 

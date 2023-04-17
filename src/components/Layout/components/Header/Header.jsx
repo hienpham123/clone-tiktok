@@ -2,9 +2,10 @@ import images from "../../../../assets/images";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react";
+import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   faEllipsisVertical,
@@ -19,11 +20,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../Button";
 import Menu from "../../../Poper/Menu/Menu";
-import { InboxIcon, MessageIcon, UploadIcon } from "../../../Icons";
+import {
+  InboxBlackIcon,
+  InboxIcon,
+  MessageIcon,
+  UploadIcon,
+} from "../../../Icons";
 import Image from "../../../Images";
 import Search from "../Search/Search";
 import config from "../../../../config";
 import SwitchButton from "../../../SwitchButton/SwitchButton";
+import PopupInbox from "../../../PopupInbox/PopupInbox";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -50,7 +58,7 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
     title: "Feedback and Help",
-    to: "/feedback",
+    // to: "/feedback",
   },
   {
     icon: <FontAwesomeIcon icon={faKeyboard} />,
@@ -59,13 +67,24 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const { t, i18n, ready } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { nickname } = useParams();
+  const navigate = useNavigate();
+  const [click, setClick] = useState(true);
+
+  const handleToMessage = () => {
+    navigate("/message");
+  };
 
   const handleMenuChange = (item) => {
     switch (item.type) {
       case "language":
         // TODO:
         changeLanguage(item.code);
+        break;
+
+      case "myProfile":
+        navigate("/@hien_ho_102");
         break;
       default:
     }
@@ -82,29 +101,25 @@ function Header() {
     {
       icon: <FontAwesomeIcon icon={faUser} />,
       title: "View Profile",
-      to: "/",
+      type: "myProfile",
     },
     {
       icon: <FontAwesomeIcon icon={faCoins} />,
       title: "Get coins",
-      to: "/",
     },
     {
       icon: <FontAwesomeIcon icon={faGear} />,
       title: "Settings",
-      to: "/",
     },
     ...MENU_ITEMS,
     {
       icon: <FontAwesomeIcon icon={faMoon} />,
       iconRight: <SwitchButton />,
       title: "Dark Mode",
-      to: "/",
     },
     {
       icon: <FontAwesomeIcon icon={faSignOut} />,
       title: "Log out",
-      to: "/",
       separate: true,
     },
   ];
@@ -112,7 +127,11 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <Link to={config.routes.home} className={cx("logo-link")}>
+        <Link
+          to={config.routes.home}
+          className={cx("logo-link")}
+          style={nickname && { marginLeft: -80, marginRight: 80 }}
+        >
           <Image src={images.logo} alt="logo" />
         </Link>
         <Search />
@@ -125,16 +144,47 @@ function Header() {
                 </button>
               </Tippy>
               <Tippy delay={[0, 50]} content="Message" placement="bottom">
-                <button className={cx("actions-btn")}>
+                <button className={cx("actions-btn")} onClick={handleToMessage}>
                   <MessageIcon />
                 </button>
               </Tippy>
-              <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
-                <button className={cx("actions-btn")}>
-                  <InboxIcon />
-                  <span className={cx("badge")}>23</span>
-                </button>
-              </Tippy>
+              {click ? (
+                <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
+                  <button
+                    className={cx("actions-btn")}
+                    onClick={() => {
+                      setTimeout(() => {
+                        setClick(false);
+                      }, 300);
+                    }}
+                  >
+                    <InboxIcon />
+                    <span className={cx("badge")}>23</span>
+                  </button>
+                </Tippy>
+              ) : (
+                <HeadlessTippy
+                  visible
+                  interactive
+                  delay={[0, 50]}
+                  offset={[180, 0]}
+                  content="Inbox"
+                  placement="bottom"
+                  render={(attrs) => (
+                    <div tabIndex="-1" {...attrs}>
+                      <PopupInbox />
+                    </div>
+                  )}
+                >
+                  <button
+                    className={cx("actions-btn")}
+                    onClick={() => setClick(true)}
+                  >
+                    <InboxBlackIcon />
+                    <span className={cx("badge")}>23</span>
+                  </button>
+                </HeadlessTippy>
+              )}
             </>
           ) : (
             <>

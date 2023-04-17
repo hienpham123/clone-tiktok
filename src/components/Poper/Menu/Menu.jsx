@@ -41,7 +41,6 @@ function Menu({
   };
   return (
     <Tippy
-      visible
       delay={[0, 1000]}
       offset={[12, 8]}
       hideOnClick={hideOnClick}
