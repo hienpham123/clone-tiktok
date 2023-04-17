@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useElementOnScreen } from "../../hook";
+import { useNavigate } from "react-router-dom";
 
-function Video({ src, onClick, isTab, ...props }) {
+function Video({ src, avt, onClick, isTab, ...props }) {
+  const navigate = useNavigate();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
 
@@ -13,6 +15,12 @@ function Video({ src, onClick, isTab, ...props }) {
       videoRef.current.play();
       setPlaying(true);
     }
+  };
+
+  const handleViewFullVideo = () => {
+    navigate("/@nickname/video", {
+      state: { video: src, avt: avt },
+    });
   };
 
   const options = {
@@ -42,6 +50,7 @@ function Video({ src, onClick, isTab, ...props }) {
       loop
       src={src}
       onClick={handleVideo}
+      onDoubleClick={handleViewFullVideo}
       {...props}
     ></video>
   );

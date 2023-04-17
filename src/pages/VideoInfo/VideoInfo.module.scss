@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+}
+
+.video {
+  display: block;
+  object-fit: contain;
+  opacity: 0.8;
+  background: center center / cover no-repeat;
+  background-color: black;
+}
+
+.right-content {
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 22px 32px 0px;
+  margin-bottom: 15px;
+  position: relative;
+  flex: 0 0 82px;
+}

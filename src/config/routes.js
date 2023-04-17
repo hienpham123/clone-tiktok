@@ -6,6 +6,7 @@ const routes = {
   search: "/search",
   live: "/live",
   message: "/message",
+  video: "/:nickname/video",
 };
 
 export default routes;

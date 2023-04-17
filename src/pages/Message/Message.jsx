@@ -53,7 +53,7 @@ function Message() {
         </div>
         <div
           className={cx("bottom-left-box")}
-          onClick={() => setIsOpenChat(!isOpenChat)}
+          onClick={() => setIsOpenChat(true)}
         >
           <Image
             style={{

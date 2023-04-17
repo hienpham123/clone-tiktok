@@ -16,7 +16,13 @@ function VideoContent({ data }) {
 
   return (
     <div className={cx("container-content")}>
-      <Video className={cx("video")} loop src={data.video} onClick></Video>
+      <Video
+        className={cx("video")}
+        loop
+        src={data.video}
+        avt={data.avatar}
+        onClick
+      ></Video>
       <div className={cx("icons")}>
         <div className={cx("detail")}>
           <div className={cx("background-icon")}>
