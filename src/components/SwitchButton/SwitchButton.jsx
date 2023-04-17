@@ -2,22 +2,29 @@ import { useEffect, useState } from "react";
 import "./SwitchButton.css";
 
 function SwitchButton() {
-  const isDarkMode = localStorage.getItem("isDark");
-  const [value, setValue] = useState(isDarkMode);
+  const [value, setValue] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-  useEffect(() => {
-    if (value) {
-      localStorage.setItem("isDark", true);
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
     } else {
-      localStorage.setItem("isDark", false);
+      setTheme("light");
     }
-  }, [value]);
+  };
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <div className="container">
       <div
         className={`checkbox ${value && "checkbox--on"}`}
-        onClick={() => setValue(!value)}
+        onClick={() => {
+          setValue(!value);
+          toggleTheme();
+        }}
       >
         <div className="checkbox__ball"></div>
         <span className="checkbox__text"></span>
