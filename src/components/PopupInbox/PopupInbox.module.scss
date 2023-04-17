@@ -191,6 +191,9 @@
 }
 
 @media only screen and (max-height: 768px) {
+  .modal_content {
+    height: 520px;
+  }
   .bottom {
     max-height: 370px;
   }
