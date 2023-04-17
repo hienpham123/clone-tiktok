@@ -1,18 +1,4 @@
 .wrapper {
-<<<<<<< HEAD
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    perspective: 1px;
-    transform-style: preserve-3d;
-    perspective-origin: right top;
-    top: 60px;
-    bottom: 0;
-    width: 356px;
-    // background: rgba(255, 255, 255, 1);
-    position: fixed;
-    z-index: 99;
-=======
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior-y: contain;
@@ -25,5 +11,4 @@
   // background: rgba(255, 255, 255, 1);
   position: fixed;
   z-index: 99;
->>>>>>> 13d3f3d8f5241fb62f50a60d382d0cd8787b8c6b
 }
