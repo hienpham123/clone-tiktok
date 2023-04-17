@@ -120,7 +120,7 @@
   overflow-y: auto;
   width: 100%;
   padding: 24px 0px 16px;
-  max-height: 505px;
+  max-height: 748px;
 }
 
 .date-main-right {
@@ -182,5 +182,11 @@
 @media only screen and (max-height: 768px) {
   .right-box {
     height: 505px;
+  }
+}
+
+@media only screen and (max-height: 768px) {
+  .main-right-box {
+    max-height: 505px;
   }
 }

@@ -29,7 +29,7 @@ const noti_comment = [
     date: "2 - 28",
     commented: "khongduocbeo : cko mk lw",
     image:
-      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/oQhVtBI9Dv59lczWBQtcfNAPCgE7yHTKDufj0C?x-expires=1681588800&x-signature=BI%2Bu250F93XwXnrHpkePUtXYCP4%3D",
+      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/oQhVtBI9Dv59lczWBQtcfNAPCgE7yHTKDufj0C?x-expires=1681725600&x-signature=kqctF7gdyvqbxzoGPgFNVe2GfrM%3D",
   },
   {
     id: 2,
@@ -41,61 +41,61 @@ const noti_comment = [
     date: "2 - 28",
     commented: "khongduocbeo : ckao b",
     image:
-      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/oQhVtBI9Dv59lczWBQtcfNAPCgE7yHTKDufj0C?x-expires=1681588800&x-signature=BI%2Bu250F93XwXnrHpkePUtXYCP4%3D",
+      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/oQhVtBI9Dv59lczWBQtcfNAPCgE7yHTKDufj0C?x-expires=1681725600&x-signature=kqctF7gdyvqbxzoGPgFNVe2GfrM%3D",
   },
   {
     id: 3,
     type: "comment",
     avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ba344ed4d8ac73f03b9390eb952ba2fa~c5_100x100.jpeg?x-expires=1681700400&x-signature=Bom3g2aHOLyxDpehRPivnOY823o%3D",
+      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ba344ed4d8ac73f03b9390eb952ba2fa~c5_100x100.jpeg?x-expires=1681790400&x-signature=vdY2A1Juy6pHFBq07x%2BVfWmlmWw%3D",
     nickname: "maydei.3010",
     action: "replied to your comment: Hônggg ạ 🫣",
     date: "2022-10-5",
     commented: "maydei.3010: 1m73🥰",
     image:
-      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/a7856d2ee34e420cbca99c15491c3c26_1664897413?x-expires=1681635600&x-signature=7nFdBC9epNnNMx3jyGFqgxvXids%3D",
+      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/a7856d2ee34e420cbca99c15491c3c26_1664897413?x-expires=1681725600&x-signature=V4Ng6KuueNlM7sAQCTTuL0sM4w0%3D",
   },
   {
     id: 4,
     type: "comment",
     avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8dbe12245b3b5715a83a7ca0ca05a8fc~c5_100x100.jpeg?x-expires=1681700400&x-signature=eDsvbajr%2FtAl%2Fr%2FNydAPxNw3JAg%3D",
+      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8dbe12245b3b5715a83a7ca0ca05a8fc~c5_100x100.jpeg?x-expires=1681790400&x-signature=MN4cdVNFFkYMXUPFV0n3nouiSpw%3D",
     nickname: "chudangchan",
     action: "replied to your comment: Hâhhaa hên thuii",
     date: "2021-6-22",
     commented: "chudangchan: Lên xu thế lunnn",
     image:
-      "https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/c1fd5d4689ec4f60ab32604d57564d01?x-expires=1681639200&x-signature=v0lWrVsoTtRVGr3MONvxO3fJ4J8%3D",
+      "https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/c1fd5d4689ec4f60ab32604d57564d01?x-expires=1681725600&x-signature=Xxzd5jnDNn1jJR2dGZi1n6C%2BYIo%3D",
   },
   {
     id: 5,
     type: "like",
     avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ba344ed4d8ac73f03b9390eb952ba2fa~c5_100x100.jpeg?x-expires=1681700400&x-signature=Bom3g2aHOLyxDpehRPivnOY823o%3D",
+      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ba344ed4d8ac73f03b9390eb952ba2fa~c5_100x100.jpeg?x-expires=1681790400&x-signature=vdY2A1Juy6pHFBq07x%2BVfWmlmWw%3D",
     nickname: "maydei.3010",
     action: " liked your comment.",
     date: "2022-10-25",
     commented: "hienho102 : Dep qua",
     image:
-      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/7e70cf7206a944639c9fbb0edd94bb94_1667365986?x-expires=1681642800&x-signature=p4DXIO3NTit%2BfPPu0kwq%2FwwoEJw%3D",
+      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/7e70cf7206a944639c9fbb0edd94bb94_1667365986?x-expires=1681725600&x-signature=Prv8BvY9%2BRqbQBQTCWRnSu%2FO3Uc%3D",
   },
   {
     id: 6,
     type: "like",
     avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fa10cfffa75eea380d2557770bddad88~c5_100x100.jpeg?x-expires=1681700400&x-signature=9EWfyosZHOGBXScGc4eTyST%2FYLY%3D",
+      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fa10cfffa75eea380d2557770bddad88~c5_100x100.jpeg?x-expires=1681790400&x-signature=v1eyliUa%2BaivpBa0J%2BW7FxkCRzg%3D",
     nickname: "jessejp92",
     action: " liked your comment.",
     date: "2021-8-7",
     commented: "hienho102 : Idol 1 thời của emmm",
     image:
-      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/f76e86cb4d974268a2672376a7dc4051?x-expires=1681642800&x-signature=tBv5RkRZRiTcj%2FWse1c1Qg1i9Mc%3D",
+      "https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/f76e86cb4d974268a2672376a7dc4051?x-expires=1681725600&x-signature=MM40nf6Y9dlnoKI%2BCZ3%2B9%2FLIb94%3D",
   },
   {
     id: 7,
     type: "follow",
     avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8cf6f09dda54783f53bdcccad0fd9e8c~c5_100x100.jpeg?x-expires=1681650000&x-signature=9YuX3V74PTGsXqAx24egDJmaGtI%3D",
+      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8cf6f09dda54783f53bdcccad0fd9e8c~c5_100x100.jpeg?x-expires=1681790400&x-signature=HeyJLc7cord8XVItM6RJLztJ7GI%3D",
     nickname: "hien_ho_102",
     action: "",
     date: "",

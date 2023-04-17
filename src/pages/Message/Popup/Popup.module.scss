@@ -1,6 +1,6 @@
 .modal_content {
   position: absolute;
-  top: 7%;
+  top: 22%;
   left: 15%;
   width: 700px;
   height: 376px;
@@ -49,4 +49,10 @@
   justify-content: flex-end;
   padding-right: 20px;
   padding-top: 20px;
+}
+
+@media only screen and (max-height: 768px) {
+  .modal_content {
+    top: 7%;
+  }
 }
