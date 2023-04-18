@@ -30,8 +30,7 @@ import { useEffect, useState } from "react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 
-const img =
-  "https://p16-sign-va.tiktokcdn.com/tos-useast2a-p-0037-aiso/56b9c48509e941b590370023a4e8018b_1681734881~tplv-f5insbecw7-1:720:720.jpeg?x-expires=1681804800&amp;x-signature=dOkbw0v8tFcEyrUe4hlx0v1HfNg%3D";
+const img = "../../../public/images/thanhmeo.jpeg";
 const cx = classNames.bind(styles);
 function VideoInfo() {
   const navigate = useNavigate();
@@ -41,6 +40,7 @@ function VideoInfo() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMute, setIsMute] = useState(false);
   const [valueSound, setValueSound] = useState(null);
+  const [isLike, setIslike] = useState(false);
 
   const handleMute = () => {
     if (!isMute) {
@@ -53,9 +53,15 @@ function VideoInfo() {
   };
 
   useEffect(() => {
-    if (valueSound === "0") {
+    if (
+      valueSound === "0" &&
+      document.getElementById("video_music").muted === true
+    ) {
       setIsMute(true);
-    } else {
+    } else if (
+      valueSound !== "0" &&
+      document.getElementById("video_music").muted === false
+    ) {
       setIsMute(false);
     }
   }, [valueSound]);
@@ -137,14 +143,14 @@ function VideoInfo() {
                 </button>
               </div>
             </HeadlessTippy>
-            <Image
+            {/* <Image
               className={cx("img-video")}
               mode="2"
               src={img}
               alt="Bắt beat hơi vụng.  DC? #thanhmeo18 "
               loading="lazy"
               class="tiktok-j6dmhd-ImgPoster e1yey0rl1"
-            ></Image>
+            ></Image> */}
             <div className={cx("div-basic-player-wrapper")}>
               <div className={cx("div-top-video")}>
                 <Video
@@ -206,9 +212,16 @@ function VideoInfo() {
             <div className={cx("icons-and-link")}>
               <div className={cx("icons")}>
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <div className={cx("bg-icon")}>
+                  <div
+                    className={cx("bg-icon")}
+                    onClick={() => setIslike(!isLike)}
+                  >
                     <FontAwesomeIcon
-                      style={{ width: 17, height: 18 }}
+                      style={{
+                        width: 17,
+                        height: 18,
+                        color: isLike && "rgb(254, 44, 85)",
+                      }}
                       icon={faHeart}
                     />
                   </div>
