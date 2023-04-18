@@ -26,7 +26,7 @@ import {
 import Comments from "./Comments";
 import { faFaceLaugh } from "@fortawesome/free-regular-svg-icons";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 
@@ -51,6 +51,14 @@ function VideoInfo() {
       setIsMute(false);
     }
   };
+
+  useEffect(() => {
+    if (valueSound === "0") {
+      setIsMute(true);
+    } else {
+      setIsMute(false);
+    }
+  }, [valueSound]);
 
   return (
     <div className={cx("wrapper")}>
