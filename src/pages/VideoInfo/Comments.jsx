@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const cx = classNames.bind(styles);
+
 function Comments() {
   return (
     <div className={cx("main-contents")}>

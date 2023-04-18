@@ -9,14 +9,7 @@ function TabVideos({ data }) {
     <div className={cx("wrapper")}>
       {(data || []).map((item, index) => {
         return (
-          <Video
-            key={index}
-            className={cx("video")}
-            // autoPlay
-            // controls
-            isTab
-            src={item}
-          ></Video>
+          <Video key={index} className={cx("video")} isTab src={item}></Video>
         );
       })}
     </div>

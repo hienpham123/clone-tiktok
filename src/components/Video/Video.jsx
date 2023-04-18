@@ -3,6 +3,14 @@ import { useElementOnScreen } from "../../hook";
 import { useNavigate } from "react-router-dom";
 
 function Video({
+  nickname,
+  fullname,
+  likes,
+  music,
+  shares,
+  comments,
+  hag_tag,
+  content,
   src,
   avt,
   onClick,
@@ -16,6 +24,19 @@ function Video({
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
 
+  const data = {
+    nickname: nickname,
+    fullname: fullname,
+    likes: likes,
+    music: music,
+    shares: shares,
+    comments: comments,
+    hag_tag: hag_tag,
+    content: content,
+    src: src,
+    avt: avt,
+  };
+
   const handleVideo = () => {
     if (playing) {
       videoRef.current.pause();
@@ -27,8 +48,8 @@ function Video({
   };
 
   const handleViewFullVideo = () => {
-    navigate("/@nickname/video", {
-      state: { video: src, avt: avt },
+    navigate("/" + "@" + nickname + "/video", {
+      state: { data: data },
     });
   };
 

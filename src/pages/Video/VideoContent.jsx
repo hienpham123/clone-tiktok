@@ -13,7 +13,6 @@ function VideoContent({ data }) {
   const handleClickHeart = () => {
     SetColorHeart(!colorHeart);
   };
-
   return (
     <div className={cx("container-content")}>
       <Video
@@ -21,6 +20,14 @@ function VideoContent({ data }) {
         loop
         src={data.video}
         avt={data.avatar}
+        fullname={data.full_name}
+        nickname={data.nick_name}
+        likes={data.likes}
+        music={data.music}
+        shares={data.shares}
+        comments={data.comments}
+        hag_tag={data.hag_tag}
+        content={data.content}
         onClick
       ></Video>
       <div className={cx("icons")}>
