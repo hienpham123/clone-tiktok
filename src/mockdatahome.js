@@ -3,8 +3,7 @@ export const LIST_VIDEO_HOME = [
     id: 1,
     nick_name: "babie.ne",
     full_name: "🦋 BABY NÈ 🦋 flop nhiều quá",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/48ffff5263263e3f41314ab3bfa2f115~c5_100x100.jpeg?x-expires=1681624800&x-signature=CuArsVLMnA2oAaa1K3R8SuW4rX4%3D",
+    avatar: "../public/images/babie.ne.jpeg",
     content: "",
     hag_tag: "#xuhuong2023 #xuhuongtiktok #hoaqua",
     music:
@@ -18,8 +17,7 @@ export const LIST_VIDEO_HOME = [
     id: 2,
     nick_name: "chikhang0311",
     full_name: "Chí Khang",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ad1de2aaf172f091cca453f3e4007ef8~c5_100x100.jpeg?x-expires=1681624800&x-signature=AVPmyDBboowmTD6iiozrCE3QXHc%3D",
+    avatar: "../public/images/chikhang0311.jpeg",
     content: "Thì không choa thoai",
     hag_tag: "#tiktokgiatri #xuhuong #dqn",
     music: "nhạc nền - CD03ᥫ᭡[WS]",
@@ -32,8 +30,7 @@ export const LIST_VIDEO_HOME = [
     id: 3,
     nick_name: "_phuongnhi.22",
     full_name: "Nguyễn Phương Nhi",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/36262a14448e5e38e9dd55d312908347~c5_100x100.jpeg?x-expires=1681624800&x-signature=5CdZXX4egX25Jzpp3Ve3dSHh8hE%3D",
+    avatar: "../public/images/_phuongnhi.22.jpeg",
     content: "Váy trắng liệu có làm mng lo lắng ?!! ",
     hag_tag: "#ahauphuongnhi #nguyenphuongnhi #phuongnhi #missworldvietnam",
     music: "nhạc nền - Nguyễn Phương Nhi",
@@ -46,8 +43,7 @@ export const LIST_VIDEO_HOME = [
     id: 4,
     nick_name: "embetit1",
     full_name: "Linh Tít 🐰💫",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/9fe0721d29e8f1c483a67914ffe2ffbe~c5_100x100.jpeg?x-expires=1681624800&x-signature=SmEJ737cgO3JjetwKFC2H%2BLxQXo%3D",
+    avatar: "../public/images/embetit1.jpeg",
     content: "nhảy linh tinh z đó",
     hag_tag: "#dqn",
     music: "nhạc nền - Linh Tít 🐰💫",
@@ -60,8 +56,7 @@ export const LIST_VIDEO_HOME = [
     id: 5,
     nick_name: "luongthuylinh_",
     full_name: "Lương Thuỳ Linh",
-    avatar:
-      "https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/73b6ffaf0d09f5ee7f19dc3c07032034.jpeg?x-expires=1681628400&x-signature=jPRK0NK0SMFVNqBD1BZmd1RhBX4%3D",
+    avatar: "../public/images/luongthuylinh_.jpeg",
     content: "Alo alo",
     hag_tag: "#luongthuylinh #missworldvietnam",
     music: "nhạc nền - Lương Thuỳ Linh",
@@ -74,8 +69,7 @@ export const LIST_VIDEO_HOME = [
     id: 6,
     nick_name: "cciinnn",
     full_name: "CiiN",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/aee057941301af2efecea5e2f7906c34~c5_100x100.jpeg?x-expires=1681628400&x-signature=nbMAzGRrnBZJOfWBIl1edITs5Qk%3D",
+    avatar: "../public/images/cciinnn.jpeg",
     content: "Love the song yaaaaaah 🖤💖",
     hag_tag: "#Jisoo #Jisoosolo #Flower #FlowerJisoo",
     music: "FLOWER - JISOO",
@@ -88,8 +82,7 @@ export const LIST_VIDEO_HOME = [
     id: 7,
     nick_name: "hoaa.hanassii",
     full_name: "Đào Lê Phương Hoa",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/05aa222706c452c8ad0ea7d2e719a745~c5_100x100.jpeg?x-expires=1681628400&x-signature=m1Qb%2Bez2UjmdONIACWcsI6qxwi8%3D",
+    avatar: "../public/images/hoaa.hanassii.jpeg",
     content: "Mình tên Hoa nên nhảy FLOWER hợp lý quá ròii 🌺",
     hag_tag: "#Jisoo #Jisoosolo #Flower #FlowerJisoo",
     music:
@@ -103,8 +96,7 @@ export const LIST_VIDEO_HOME = [
     id: 8,
     nick_name: "asquarecrew",
     full_name: "ASquare Crew",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/f77e7d3512d3beac13f7bbd861562435~c5_100x100.jpeg?x-expires=1681628400&x-signature=Yx%2FeeiEiR0s6vR47BMvdDvk3V%2Fk%3D",
+    avatar: "../public/images/asquarecrew.jpeg",
     content: "Jisoo Flower Dance with my Mom",
     hag_tag:
       "#momson #aayush #fyp #foryou #trend #viral #asquarecrew #jisoo #flowerdancechallenge #blackpink #aayushandabhay",
@@ -118,8 +110,7 @@ export const LIST_VIDEO_HOME = [
     id: 9,
     nick_name: "zixinhdep",
     full_name: "Zika_hila🧚🏿‍♀️",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/0c086c2bf834b6fb9984a62710e04ed9~c5_100x100.jpeg?x-expires=1681628400&x-signature=NSA2mt44JSMD7vyLWFrJGz209Mc%3D",
+    avatar: "../public/images/zixinhdep.jpeg",
     content: "Nghịch thì nhất em",
     hag_tag: "#stromick",
     music: "nhạc nền - Zika_hila🧚🏿‍♀️",
@@ -132,8 +123,7 @@ export const LIST_VIDEO_HOME = [
     id: 10,
     nick_name: "zixinhdep",
     full_name: "Zika_hila🧚🏿‍♀️",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/0c086c2bf834b6fb9984a62710e04ed9~c5_100x100.jpeg?x-expires=1681628400&x-signature=NSA2mt44JSMD7vyLWFrJGz209Mc%3D",
+    avatar: "../public/images/zixinhdep.jpeg",
     content: "Lên ☝🏻",
     hag_tag: "#stromick",
     music: "nhạc nền - Anh Quan",
@@ -146,8 +136,7 @@ export const LIST_VIDEO_HOME = [
     id: 11,
     nick_name: "quankdivaobarr",
     full_name: "Quân K Đi Vào Bar 🕺🏻",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/b4424a170ee2014f305c7c4e9e2241d6~c5_100x100.jpeg?x-expires=1681632000&x-signature=0HYbMOd7mh6xghvMlEbmtCSmpvg%3D",
+    avatar: "../public/images/quankdivaobarr.jpeg",
     content: "Hạ Cánh cùng cặp đôi Quân K-Air Đi Vào Bair",
     hag_tag: "#quankdivaobarr #hadalux #iconicglss #vtmgr @Quan _Air",
     music: "nhạc nền - Quân K Đi Vào Bar 🕺🏻",
@@ -160,8 +149,7 @@ export const LIST_VIDEO_HOME = [
     id: 12,
     nick_name: "_clouddom",
     full_name: "Mâyy ☁️",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/58780b3ebfbffbcc8950afa472246694~c5_100x100.jpeg?x-expires=1681632000&x-signature=H3hd512ReDgyRkIuSMTCZN8lF4A%3D",
+    avatar: "../public/images/_clouddom.jpeg",
     content: "Hai cô em chuẩn bị ứng tuyển làm thư ký chủ tịch 🫂 (dc: ? ) ",
     hag_tag: "#dqn #clouddom #tiktokdancevn",
     music: "Brandon Beal x Công Thành Remix - 𝐄𝐱𝐜𝐥𝐮𝐬𝐢𝐯𝐞 𝐌𝐮𝐬𝐢𝐜",
@@ -174,8 +162,7 @@ export const LIST_VIDEO_HOME = [
     id: 13,
     nick_name: "vaan.ilu",
     full_name: "vaan.ilu",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/2c08227535882abd8f9262420bda3685~c5_100x100.jpeg?x-expires=1681632000&x-signature=Ev6k0y8sMJTGWWQrwTh3%2BkyQXBI%3D",
+    avatar: "../public/images/vaan.ilu.jpeg",
     content: "tìm một mảnh ghép của đôi ta🧚🏻‍♀️✨",
     hag_tag: "#CapCut",
     music: "nhạc nền - L",
@@ -188,8 +175,7 @@ export const LIST_VIDEO_HOME = [
     id: 14,
     nick_name: "nhacnomusik",
     full_name: "𝑵𝒉𝒂𝒄 𝑵𝒐 𝑴𝒖𝑺𝒊𝒌 🌬️",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/1a631d4a29fb6ec492de2f62c027e3e9~c5_100x100.jpeg?x-expires=1681632000&x-signature=RSybHy1DrhaIk0NobGezo%2F4FZIc%3D",
+    avatar: "../public/images/nhacnomusik.jpeg",
     content: "Bậc Tình Yêu Lên ❤️‍🔥",
     hag_tag: "#lyrics #remix #foryou #fypシ #xuhuongtiktok #nhacnomusik",
     music: "Bật Tình Yêu Lên Remix - CUKAK",
@@ -202,8 +188,7 @@ export const LIST_VIDEO_HOME = [
     id: 15,
     nick_name: "sivsole97",
     full_name: "Dương Nguyễn",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/843114f9bd7f658b94e6ec3c7202594f~c5_100x100.jpeg?x-expires=1681632000&x-signature=mj3BGtLWRX%2FaGdQXHf7uXswZ%2Bug%3D",
+    avatar: "../public/images/sivsole97.jpeg",
     content:
       "Biệt đội đổ nhớt tại đám cưới @Hungheo13 quẩy nhiệt quá @Đoàn Huy Hoàng",
     hag_tag: "#hoàngtửnhớt #thánhđổnhớt #dươngnhotsdl #sivsole97",
@@ -217,8 +202,7 @@ export const LIST_VIDEO_HOME = [
     id: 16,
     nick_name: "tongplayhub",
     full_name: "Tòng Playhub",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/418a6dae7d48815187c46f61dbbdee97~c5_100x100.jpeg?x-expires=1681632000&x-signature=GrlDJaCblhfxXVHtei9SA%2FeEJcQ%3D",
+    avatar: "../public/images/tongplayhub.jpeg",
     content: "Mùa thu không còn trong tâm trí em, nhưng anh thì còn",
     hag_tag:
       "#tong106thaithinh #tong #djmvinyl #djducmanh #remix #thucuoi #vitamintraiđẹp #xuhuong",
@@ -232,8 +216,7 @@ export const LIST_VIDEO_HOME = [
     id: 17,
     nick_name: "thuongthuongtotinh",
     full_name: "ở đây chỉ có Rap 🎧",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/382e9b20d3e70c135a39892fc5fb0ed4~c5_100x100.jpeg?x-expires=1681632000&x-signature=VNw8UChb1ilK754ul5MZXbLg%2FMQ%3D",
+    avatar: "../public/images/thuongthuongtotinh.jpeg",
     content: "Sang xịn mịn",
     hag_tag: "#gill #xuhuong #viral #thuongthichtotinh",
     music: "nhạc nền - ở đây chỉ có Rap 🎧",
@@ -246,8 +229,7 @@ export const LIST_VIDEO_HOME = [
     id: 18,
     nick_name: "bapofficial.vn",
     full_name: "BAP Remix",
-    avatar:
-      "https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/8730d53d3af393f7c17f79b1a2f7089b~c5_100x100.jpeg?x-expires=1681632000&x-signature=kb88lAu7nzIw1MuFsOPEKZcOSew%3D",
+    avatar: "../public/images/bapofficial.vn.jpeg",
     content: "way back home lời việt",
     hag_tag: "#bigartsentertainment #bapremix #music #cover #nhachaymoingay",
     music: "nhạc nền - BAP Remix",
@@ -257,11 +239,10 @@ export const LIST_VIDEO_HOME = [
     shares: "77",
   },
   {
-    id: 18,
+    id: 19,
     nick_name: "nghelaphe_music01",
     full_name: "Nghe Là Phê !",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/d6d9b4848672ab128736c890cf8545c6~c5_100x100.jpeg?x-expires=1681632000&x-signature=ICRBDTWa1zE%2BcEKqVqEFfWYKIkk%3D",
+    avatar: "../public/images/nghelaphe_music01.jpeg",
     content:
       "Bài hát có giai điệu cực hay nhưng không phải ai cũng hiểu ý nghĩa...",
     hag_tag:
@@ -273,11 +254,10 @@ export const LIST_VIDEO_HOME = [
     shares: "65",
   },
   {
-    id: 19,
+    id: 20,
     nick_name: "meaningful_english",
     full_name: "Enjoy learning English",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7182745784234803205~c5_100x100.jpeg?x-expires=1681632000&x-signature=n0osxDIJcpEdgxNOHh9DLy%2BlwZ4%3D",
+    avatar: "../public/images/meaningful_english.jpeg",
     content: "I do | 911 ft Duc Phuc.",
     hag_tag:
       " #learnontiktok #learnenglish #tienganh #hoctienganh #hoccungtiktok #fyp #trend #xuhuong #lyrics #vietsub #meaningful #love",
@@ -288,11 +268,10 @@ export const LIST_VIDEO_HOME = [
     shares: "2029",
   },
   {
-    id: 20,
+    id: 21,
     nick_name: "super.beo",
     full_name: "Phạm Tống Khang",
-    avatar:
-      "https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/f4c8d6d6aaa33d516ae0c7f4cb800c70~c5_100x100.jpeg?x-expires=1681632000&x-signature=p%2FIZeRv3LtQPFmgzma2kTqUTmbA%3D",
+    avatar: "../public/images/super.beo.jpeg",
     content: "@Nếu không anh thì em có buồn ? ",
     hag_tag: "@#khangtong #cover #codontrensofa",
     music: "nhạc nền - Phạm Tống Khang",
@@ -302,11 +281,10 @@ export const LIST_VIDEO_HOME = [
     shares: "100",
   },
   {
-    id: 21,
+    id: 22,
     nick_name: "han.lua",
     full_name: "𝗚𝗶𝗮 𝗛𝗮̂𝗻 🐰",
-    avatar:
-      "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/c1818848d635458fa191b48036a87673~c5_100x100.jpeg?x-expires=1681650000&x-signature=rJTV4H3hRAh%2Brxfdtu5Wb8xbaB4%3D",
+    avatar: "../public/images/han.lua",
     content: "Màu chím này chinh toá 🌷",
     hag_tag: "#viral #outfit #fyp",
     music: "nhạc nền - Lê Phương Trinh",

@@ -16,10 +16,8 @@ import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
-const me =
-  "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/a44506aeeace3738adce0032bce0ef45~c5_720x720.jpeg?x-expires=1681804800&x-signature=NjjzcCQnBi1tEopwd1NNwkY9P3Q%3D";
-const you =
-  "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/59ca64765bf927078770062798ba507e~c5_100x100.jpeg?x-expires=1681732800&x-signature=OYkSZFH2E848bd0bClpWpfWlJsE%3D";
+const me = "../../../public/images/hienho.jpeg";
+const you = "../../../public/images/khongduocbeo.jpeg";
 function Message() {
   const navigate = useNavigate();
   const [isOpenPopup, setIsOpenPopup] = useState(false);

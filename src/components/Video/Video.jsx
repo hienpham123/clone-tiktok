@@ -2,7 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { useElementOnScreen } from "../../hook";
 import { useNavigate } from "react-router-dom";
 
-function Video({ src, avt, onClick, isTab, ...props }) {
+function Video({
+  src,
+  avt,
+  onClick,
+  isTab,
+  setIsPlaying,
+  valueSound,
+  ...props
+}) {
+  const volumn = localStorage.getItem("valueSound");
   const navigate = useNavigate();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
@@ -44,8 +53,25 @@ function Video({ src, avt, onClick, isTab, ...props }) {
     }
   }, [isVisible]);
 
+  useEffect(() => {
+    if (playing) {
+      setIsPlaying && setIsPlaying(true);
+    } else {
+      setIsPlaying && setIsPlaying(false);
+    }
+  }, [playing]);
+
+  useEffect(() => {
+    var vid = document.getElementById("video_music");
+    valueSound ? (vid.volume = valueSound) : (vid.volume = volumn);
+    if (valueSound) {
+      localStorage.setItem("valueSound", valueSound);
+    }
+  }, [valueSound]);
+
   return (
     <video
+      id="video_music"
       ref={!isTab ? videoRef : null}
       loop
       src={src}

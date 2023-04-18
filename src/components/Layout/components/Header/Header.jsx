@@ -200,7 +200,7 @@ function Header() {
             {currentUser ? (
               <Image
                 className={cx("user-avatar")}
-                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8cf6f09dda54783f53bdcccad0fd9e8c~c5_100x100.jpeg?x-expires=1681452000&x-signature=nK6eFprJGfqN9HNkOkOFILpmyT4%3D"
+                src="../../../../../public/images/hienho.jpeg"
                 alt=""
                 fallback="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/4b4722d941112ab256d01a243bd56445~c5_100x100.jpeg?x-expires=1681380000&x-signature=bQMWUyRbovN6%2Bzx29dodLPdQ3eY%3D"
               />

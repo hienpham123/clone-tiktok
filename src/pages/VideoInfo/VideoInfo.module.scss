@@ -1,25 +1,375 @@
 .wrapper {
+  position: fixed;
+  inset: 0px;
+  // background: rgb(18, 18, 18);
+  z-index: 1000;
   display: flex;
+  flex-direction: row;
+}
+
+.container-video {
+  flex: 1 0 600px;
+  max-width: 100%;
+  background: rgb(0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  padding: 0px 80px;
+}
+
+.div-bg-video {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  filter: blur(2px);
+  left: 50%;
+  top: 50%;
+  transform: scale(11);
+  opacity: 0.3;
+  background: center center / cover no-repeat;
+  background-image: url(https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/22c8fdca9bb74895991315264a382a83_1680006286?x-expires=1681830000&x-signature=QFIdKoIf0IvSK5UkaYf8YvOF73A%3D);
+}
+
+.wr-video {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.wr-video-2 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.08);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.btn-x {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(84, 84, 84, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  top: 20px;
+  transition: opacity 0.3s ease 0s;
+  left: 20px;
+
+  &:hover {
+    background-color: rgba(37, 37, 37, 0.6);
+    opacity: 0.7;
+  }
+}
+
+.btn-play {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.btn-sound {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+}
+
+.wr-btn-sound {
+  border: none;
+  background: none rgba(84, 84, 84, 0.5);
+  outline: none;
+  padding: 0px;
+  display: flex;
+  transition: opacity 0.3s ease 0s;
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 100px;
+}
+
+.change-sound {
+  width: 28px;
+  height: 96px;
+  margin: 8px 6px;
+  display: block;
+  position: relative;
+  border-radius: 32px;
+
+  &:hover {
+    background: rgba(84, 84, 84, 0.5);
+  }
+}
+
+.wr-range {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  right: -45px;
+}
+
+.input-range {
+  opacity: 0.6;
+  max-width: 90px;
+  transform: rotate(270deg);
+}
+
+.img-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.div-basic-player-wrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.div-top-video {
+  width: 100%;
+  height: 100%;
 }
 
 .video {
   display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  opacity: 0.8;
-  background: center center / cover no-repeat;
-  background-color: black;
 }
 
 .right-content {
+  flex: 0 0 544px;
+  width: 544px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0px 0px;
 }
 
-.info {
+.info-top {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   -webkit-box-align: center;
   align-items: center;
   padding: 22px 32px 0px;
   margin-bottom: 15px;
   position: relative;
   flex: 0 0 82px;
+}
+
+.info-mid {
+  padding: 0px 32px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.icons-and-link {
+  position: relative;
+  padding: 16px 0px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  max-height: 50px;
+}
+
+.bg-icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(22, 24, 35, 0.06);
+  align-items: center;
+  justify-content: center;
+  margin-right: 7px;
+}
+
+.icon {
+  margin-left: 6px;
+}
+
+.icon-share {
+  margin-left: 6px;
+  width: 16px;
+}
+
+.copy-link {
+  color: rgba(22, 24, 35, 0.75);
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+  box-sizing: border-box;
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.text-link {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  padding: 7px 0px 5px 12px;
+  background-color: rgba(22, 24, 35, 0.06);
+}
+
+.btn-copy-link {
+  border: none;
+  background: none rgba(22, 24, 35, 0.06);
+  outline: none;
+  color: rgb(22, 24, 35);
+  font-weight: 700;
+  flex: 0 0 auto;
+  cursor: pointer;
+  padding: 7px 18px;
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.bottom-right-content {
+  border-top: 1px solid rgba(22, 24, 35, 0.2);
+  overflow: scroll;
+  margin-bottom: -15px;
+}
+
+//comments
+.main-contents {
+  padding: 16px 0;
+}
+
+.ct-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 32px;
+}
+.ct-name {
+  font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.ct-comment {
+  font-size: 16px;
+  line-height: 22px;
+  white-space: pre-line;
+  word-break: break-word;
+  margin-bottom: 6px;
+}
+.ct-text-reply {
+  color: rgba(22, 24, 35, 0.5);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.view-more-reply {
+  margin-top: 13px;
+  color: rgba(22, 24, 35, 0.5);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.ct-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 38px;
+}
+
+.bg-more-icon {
+  height: 30px;
+  width: 30px;
+  margin-left: 6px;
+}
+
+.more-icon {
+  display: none;
+}
+
+.bg-more-icon:hover .more-icon {
+  display: block;
+}
+
+.input-right {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 13px 16px;
+  border-top: 0.5px solid rgba(22, 24, 35, 0.12);
+}
+
+.input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0%;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgba(22, 24, 35, 0.06);
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  line-height: 18px;
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+
+  &:active {
+    border: 1px solid rgba(22, 24, 35, 0.2);
+  }
+}
+
+.icon-input {
+  margin-right: 15px;
+}
+
+.btn-post {
+  color: rgba(22, 24, 35, 0.34);
+  font-weight: 600;
+  cursor: default;
+  flex: 0 0 48px;
+  font-size: 14px;
+  line-height: 39px;
+  text-align: right;
+  margin-right: 4px;
 }
