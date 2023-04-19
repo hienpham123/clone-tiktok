@@ -127,3 +127,36 @@ export const LIST_ACTION_BTN_SHARE_ALL = [
     // to: "/",
   },
 ];
+
+export const LIST_ACTION_BTN_SHARE_VIEW_FULL = [
+  {
+    title: "Share to Likedin",
+    icon: <LikeEdinIcon />,
+    // to: "/",
+  },
+  {
+    title: "Share to Reddit",
+    icon: <RedditIcon />,
+    // to: "/",
+  },
+  {
+    title: "Share to Telegram",
+    icon: <TelegramIcon />,
+    // to: "/",
+  },
+  {
+    title: "Share to Email",
+    icon: <EmailIcon />,
+    // to: "/",
+  },
+  {
+    title: "Share to Line",
+    icon: <LineIcon />,
+    // to: "/",
+  },
+  {
+    title: "Share to Pinterest",
+    icon: <PinterestIcon />,
+    // to: "/",
+  },
+];

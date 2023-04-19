@@ -22,13 +22,16 @@ import {
   SoundIcon,
   TagIcon,
   TwitterIcon,
+  WhatsAppIcon,
 } from "../../components/Icons/Icons";
 import Comments from "./Comments";
 import { faFaceLaugh } from "@fortawesome/free-regular-svg-icons";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState } from "react";
+import Tippy from "@tippyjs/react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
+import BtnShareMore from "../Profile/Information/BtnShareMore";
 
 const img = "../../../public/images/thanhmeo.jpeg";
 const cx = classNames.bind(styles);
@@ -53,10 +56,7 @@ function VideoInfo() {
   };
 
   useEffect(() => {
-    if (
-      valueSound === "0" &&
-      document.getElementById(`video_music ${data?.src}`)?.muted === true
-    ) {
+    if (valueSound === "0") {
       setIsMute(true);
     } else if (
       valueSound !== "0" &&
@@ -257,12 +257,50 @@ function VideoInfo() {
                 </div>
 
                 <div style={{ display: "flex" }}>
-                  <EmbedIcon className={cx("icon")} />
-                  <FriendIcon className={cx("icon")} />
-                  <FacebookIcon className={cx("icon")} />
-                  <LineIcon className={cx("icon")} />
-                  <TwitterIcon className={cx("icon")} />
-                  <ShareIcon className={cx("icon-share")} />
+                  <Tippy delay={[0, 50]} content="Embed" placement="top">
+                    <div>
+                      <EmbedIcon className={cx("icon")} />
+                    </div>
+                  </Tippy>
+                  <Tippy
+                    delay={[0, 50]}
+                    content="Send to friends"
+                    placement="top"
+                  >
+                    <div>
+                      <FriendIcon className={cx("icon")} />
+                    </div>
+                  </Tippy>
+                  <Tippy
+                    delay={[0, 50]}
+                    content="Share to Facebook"
+                    placement="top"
+                  >
+                    <div>
+                      <FacebookIcon className={cx("icon")} />
+                    </div>
+                  </Tippy>
+                  <Tippy
+                    delay={[0, 50]}
+                    content="Share to WhatsApps"
+                    placement="top"
+                  >
+                    <div>
+                      <WhatsAppIcon className={cx("icon")} />
+                    </div>
+                  </Tippy>
+                  <Tippy
+                    delay={[0, 50]}
+                    content="Share to Twitter"
+                    placement="top"
+                  >
+                    <div>
+                      <TwitterIcon className={cx("icon")} />
+                    </div>
+                  </Tippy>
+                  <div className={cx("icon-share")}>
+                    <BtnShareMore isViewFull />
+                  </div>
                 </div>
               </div>
               <div className={cx("copy-link")}>

@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./SuggestedAccount.module.scss";
 import classNames from "classnames/bind";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
@@ -30,8 +31,12 @@ function AccountItem({ data, isSuggested }) {
         placement="bottom"
         render={(props) => (isSuggested ? renderPreview(props) : null)}
       >
-        <div className={cx("account-item")}>
-          <Image className={cx("avatar")} src={data.avatar} alt="" />
+        <Link className={cx("account-item")} to={`/@${data.nickname}`}>
+          <Image
+            className={cx("avatar")}
+            src={data.avatar}
+            alt={data.nickname}
+          />
           <div className={cx("item-info")}>
             <p className={cx("nickname")}>
               <strong>{data.nickname}</strong>
@@ -41,7 +46,7 @@ function AccountItem({ data, isSuggested }) {
             </p>
             <p className={cx("name")}>{data.full_name}</p>
           </div>
-        </div>
+        </Link>
       </Tippy>
     </div>
   );
