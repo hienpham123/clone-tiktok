@@ -1,14 +1,13 @@
 .wrapper {
-  //   display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   -webkit-box-pack: start;
   justify-content: flex-start;
-  min-height: 490px;
   align-items: flex-start;
-  min-width: 600px;
   position: relative;
   margin-left: -20px;
+  margin-bottom: 20px;
 }
 
 .video {
@@ -16,5 +15,4 @@
   height: 275px;
   border-radius: 5px;
   object-fit: cover;
-  margin-right: 20px;
 }

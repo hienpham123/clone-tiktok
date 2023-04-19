@@ -1,1 +1,1 @@
-export { defaulf } from "./Video.jsx";
+export { default } from "./Video.jsx";

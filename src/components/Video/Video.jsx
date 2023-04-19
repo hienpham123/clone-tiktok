@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useElementOnScreen } from "../../hook";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidV4 } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import "./Video.scss";
+import { MuteIcon, SoundIcon } from "../Icons";
 
 function Video({
   data,
@@ -12,9 +16,12 @@ function Video({
   valueSound,
   ...props
 }) {
+  let vid = document.getElementById("video_music");
+  const { nickname } = useParams();
   const navigate = useNavigate();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
+  const [isMute, setIsMute] = useState(false);
   const id = uuidV4();
 
   const handleVideo = () => {
@@ -25,6 +32,16 @@ function Video({
       videoRef.current.play();
       setPlaying(true);
     }
+  };
+
+  const handleMuted = () => {
+    vid.volume = "0";
+    setIsMute(true);
+  };
+
+  const handleSound = () => {
+    vid.volume = "0.5";
+    setIsMute(false);
   };
 
   const handleViewFullVideo = () => {
@@ -64,21 +81,43 @@ function Video({
 
   useEffect(() => {
     if (valueSound) {
-      var vid = document.getElementById("video_music");
       vid.volume = valueSound;
     }
   }, [valueSound]);
 
   return (
-    <video
-      id="video_music"
-      ref={!isTab ? videoRef : null}
-      loop
-      src={src}
-      onClick={handleVideo}
-      onDoubleClick={handleViewFullVideo}
-      {...props}
-    ></video>
+    <div className="wrapper">
+      {!nickname && (
+        <div className="bg-btn" onClick={handleVideo}>
+          {!playing ? (
+            <FontAwesomeIcon className="btn-play" icon={faPlay} />
+          ) : (
+            <FontAwesomeIcon className="btn-play" icon={faPause} />
+          )}
+        </div>
+      )}
+      {!nickname && isMute ? (
+        <div onClick={handleSound}>
+          <MuteIcon className="btn-mute" />
+        </div>
+      ) : (
+        !nickname && (
+          <div onClick={handleMuted}>
+            <SoundIcon className="btn-mute" />
+          </div>
+        )
+      )}
+      <video
+        className="video"
+        id="video_music"
+        ref={!isTab ? videoRef : null}
+        loop
+        src={src}
+        onClick={nickname ? handleVideo : handleViewFullVideo}
+        // onDoubleClick={handleViewFullVideo}
+        {...props}
+      ></video>
+    </div>
   );
 }
 
