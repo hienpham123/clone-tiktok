@@ -26,7 +26,13 @@ function Videos() {
     const data = LIST_ACCOUNT.filter(
       (item) => item.nickname === nickname.substring(1)
     );
-    setListVideo(data[0].videos);
+    const _data = [
+      {
+        nickname: data[0].nickname,
+        videos: data[0].videos,
+      },
+    ];
+    setListVideo(_data);
   }, [nickname]);
 
   return (

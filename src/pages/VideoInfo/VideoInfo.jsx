@@ -155,7 +155,7 @@ function VideoInfo() {
               <div className={cx("div-top-video")}>
                 <Video
                   className={cx("video")}
-                  src={data?.src}
+                  src={data?.src || location.state.src}
                   setIsPlaying={setIsPlaying}
                   valueSound={valueSound}
                 />

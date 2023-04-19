@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useElementOnScreen } from "../../hook";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidV4 } from "uuid";
 
 function Video({
   data,
@@ -11,10 +12,10 @@ function Video({
   valueSound,
   ...props
 }) {
-  const volumn = localStorage.getItem("valueSound");
   const navigate = useNavigate();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
+  const id = uuidV4();
 
   const handleVideo = () => {
     if (playing) {
@@ -27,8 +28,8 @@ function Video({
   };
 
   const handleViewFullVideo = () => {
-    navigate("/" + "@" + data.nickname + "/video", {
-      state: { data: data },
+    navigate(`/@${data.nickname}/video/${id}`, {
+      state: { data: data, src: src },
     });
   };
 
@@ -62,10 +63,9 @@ function Video({
   }, [playing]);
 
   useEffect(() => {
-    var vid = document.getElementById("video_music");
-    valueSound ? (vid.volume = valueSound) : (vid.volume = volumn);
     if (valueSound) {
-      localStorage.setItem("valueSound", valueSound);
+      var vid = document.getElementById("video_music");
+      vid.volume = valueSound;
     }
   }, [valueSound]);
 
