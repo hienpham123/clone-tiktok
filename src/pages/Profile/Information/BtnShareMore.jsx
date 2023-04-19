@@ -65,8 +65,8 @@ function BtnShareMore({ isHomePage }) {
       <Tippy
         interactive
         delay={[0, 200]}
-        offset={[-100, 10]}
-        placement="bottom"
+        offset={isHomePage ? [75, 20] : [-100, 10]}
+        placement={isHomePage ? "top" : "bottom"}
         onClickOutside={() => handleCollapse()}
         render={(props) => renderPopupShare(props)}
       >
