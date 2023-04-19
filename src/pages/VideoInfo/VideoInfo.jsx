@@ -55,12 +55,12 @@ function VideoInfo() {
   useEffect(() => {
     if (
       valueSound === "0" &&
-      document.getElementById(`video_music ${data?.src}`).muted === true
+      document.getElementById(`video_music ${data?.src}`)?.muted === true
     ) {
       setIsMute(true);
     } else if (
       valueSound !== "0" &&
-      document.getElementById(`video_music ${data?.src}`).muted === false
+      document.getElementById(`video_music ${data?.src}`)?.muted === false
     ) {
       setIsMute(false);
     }
@@ -174,7 +174,7 @@ function VideoInfo() {
                 borderRadius: "50%",
                 objecFit: "cover",
               }}
-              src={data?.avt}
+              src={`../../${data?.avt}`}
             />
             <div
               style={{

@@ -18,30 +18,29 @@ function Video({
 }) {
   let vid = document.getElementById(`video_music ${src}`);
   const navigate = useNavigate();
-  const { nickname } = useParams();
+  const { nickname, id: ID } = useParams();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
   const [isMute, setIsMute] = useState(false);
   const id = uuidV4();
-
   const handleVideo = () => {
     if (playing) {
-      videoRef.current.pause();
+      videoRef.current?.pause();
       setPlaying(false);
     } else {
-      videoRef.current.play();
+      videoRef.current?.play();
       setPlaying(true);
     }
   };
 
-  const handleMuted = () => {
-    document.getElementById(`video_music ${src}`).muted = true;
-    setIsMute(true);
-  };
-
-  const handleSound = () => {
-    document.getElementById(`video_music ${src}`).muted = false;
-    setIsMute(false);
+  const handleMuteSound = (type) => {
+    if (type === "mute") {
+      document.getElementById(`video_music ${src}`).muted = true;
+      setIsMute(true);
+    } else {
+      document.getElementById(`video_music ${src}`).muted = false;
+      setIsMute(false);
+    }
   };
 
   const handleViewFullVideo = () => {
@@ -97,12 +96,12 @@ function Video({
         </div>
       )}
       {!nickname && isMute ? (
-        <div onClick={handleSound}>
+        <div onClick={() => handleMuteSound("notMute")}>
           <MuteIcon className="btn-mute" />
         </div>
       ) : (
         !nickname && (
-          <div onClick={handleMuted}>
+          <div onClick={() => handleMuteSound("mute")}>
             <SoundIcon className="btn-mute" />
           </div>
         )
@@ -113,7 +112,7 @@ function Video({
         ref={!isTab ? videoRef : null}
         loop
         src={src}
-        onClick={nickname ? handleVideo : handleViewFullVideo}
+        onClick={nickname && ID ? handleVideo : handleViewFullVideo}
         {...props}
       ></video>
     </div>

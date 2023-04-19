@@ -754,7 +754,7 @@ export const MuteIcon = ({ width = "4rem", height = "4rem", className }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="24" cy="24" r="24" fill="000" fill-opacity="1"></circle>
+    <circle cx="24" cy="24" r="24" fill="000" fillOpacity="1"></circle>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
