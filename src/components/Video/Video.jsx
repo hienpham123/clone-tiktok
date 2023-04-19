@@ -16,9 +16,9 @@ function Video({
   valueSound,
   ...props
 }) {
-  let vid = document.getElementById("video_music");
-  const { nickname } = useParams();
+  let vid = document.getElementById(`video_music ${src}`);
   const navigate = useNavigate();
+  const { nickname } = useParams();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
   const [isMute, setIsMute] = useState(false);
@@ -35,12 +35,12 @@ function Video({
   };
 
   const handleMuted = () => {
-    vid.volume = "0";
+    document.getElementById(`video_music ${src}`).muted = true;
     setIsMute(true);
   };
 
   const handleSound = () => {
-    vid.volume = "0.5";
+    document.getElementById(`video_music ${src}`).muted = false;
     setIsMute(false);
   };
 
@@ -109,12 +109,11 @@ function Video({
       )}
       <video
         className="video"
-        id="video_music"
+        id={`video_music ${src}`}
         ref={!isTab ? videoRef : null}
         loop
         src={src}
         onClick={nickname ? handleVideo : handleViewFullVideo}
-        // onDoubleClick={handleViewFullVideo}
         {...props}
       ></video>
     </div>
