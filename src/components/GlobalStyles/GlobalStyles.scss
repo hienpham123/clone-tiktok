@@ -32,8 +32,8 @@ html {
 }
 
 .dark {
-    background-color: rgb(18, 18, 18) !important;
-    color: var(--white) !important;
+  background-color: rgb(18, 18, 18) !important;
+  color: var(--white) !important;
 }
 
 body {
@@ -128,4 +128,32 @@ body {
   a {
     color: var(--color-dark);
   }
+}
+
+//custom styles for input range
+
+/* Remove default styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 12px 5px;
+}
+
+/* Set track styles */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.34);
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+/* Set thumb styles */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  margin-top: -6.5px;
+  cursor: pointer;
 }

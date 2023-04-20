@@ -5,6 +5,8 @@ import { v4 as uuidV4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import "./Video.scss";
+import HeadlessTippy from "@tippyjs/react/headless";
+import "tippy.js/dist/tippy.css"; // optional
 import { MuteIcon, SoundIcon } from "../Icons";
 
 function Video({
@@ -24,6 +26,7 @@ function Video({
   const { nickname, id: ID } = useParams();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
+  const [isVolume, setIsVolume] = useState(null);
   const [isMute, setIsMute] = useState(false);
   const id = uuidV4();
 
@@ -95,8 +98,10 @@ function Video({
   useEffect(() => {
     if (valueSound) {
       vid.volume = valueSound;
+    } else if (isVolume) {
+      vid.volume = isVolume;
     }
-  }, [valueSound]);
+  }, [valueSound, isVolume]);
 
   return (
     <div className="wrapper">
@@ -109,17 +114,39 @@ function Video({
           )}
         </div>
       )}
-      {!nickname && isMute ? (
-        <div onClick={() => handleMuteSound("notMute")}>
-          <MuteIcon className="btn-mute" />
-        </div>
-      ) : (
-        !nickname && (
-          <div onClick={() => handleMuteSound("mute")}>
-            <SoundIcon className="btn-mute" />
+      <HeadlessTippy
+        interactive
+        delay={[0, 50]}
+        offset={[0, -100]}
+        placement="top"
+        render={(attrs) => (
+          <div tabIndex="-1" {...attrs}>
+            <div className="wr-range">
+              <input
+                className="input-range"
+                type="range"
+                min="0"
+                max="1"
+                step="any"
+                value={isVolume}
+                onChange={(event) => setIsVolume(event.currentTarget.value)}
+              />
+            </div>
           </div>
-        )
-      )}
+        )}
+      >
+        {!nickname && isMute ? (
+          <div onClick={() => handleMuteSound("notMute")}>
+            <MuteIcon className="btn-mute" />
+          </div>
+        ) : (
+          !nickname && (
+            <div onClick={() => handleMuteSound("mute")}>
+              <SoundIcon className="btn-mute" />
+            </div>
+          )
+        )}
+      </HeadlessTippy>
       <video
         className="video"
         id={`video_music ${src}`}

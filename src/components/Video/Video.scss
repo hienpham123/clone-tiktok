@@ -57,3 +57,15 @@
     min-height: 600px;
     object-fit: cover;
 }
+
+.wr-range {
+    position: absolute;
+    z-index: 999;
+    top: 420px;
+    left: 292px;
+}
+
+.input-range {
+    max-width: 55px;
+    transform: rotate(270deg);
+}
