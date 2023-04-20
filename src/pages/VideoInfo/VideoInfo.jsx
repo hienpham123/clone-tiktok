@@ -53,12 +53,12 @@ function VideoInfo() {
   const handleMute = () => {
     if (!isMute) {
       document.getElementById(
-        `video_music ${nextVideo?.video || data?.src}`
+        `video_music ${nextVideo?.video || data?.src || location.state.src}`
       ).muted = true;
       setIsMute(true);
     } else {
       document.getElementById(
-        `video_music ${nextVideo?.video || data?.src}`
+        `video_music ${nextVideo?.video || data?.src || location.state.src}`
       ).muted = false;
       setIsMute(false);
     }
@@ -94,8 +94,9 @@ function VideoInfo() {
       setIsMute(true);
     } else if (
       valueSound !== "0" &&
-      document.getElementById(`video_music ${nextVideo?.video || data?.src}`)
-        ?.muted === false
+      document.getElementById(
+        `video_music ${nextVideo?.video || data?.src || location.state.src}`
+      )?.muted === false
     ) {
       setIsMute(false);
     }
