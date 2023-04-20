@@ -164,12 +164,12 @@ function Header() {
                 </Tippy>
               ) : (
                 <HeadlessTippy
-                  visible
+                  visible={!click}
                   interactive
                   delay={[0, 50]}
                   offset={[180, 0]}
-                  content="Inbox"
                   placement="bottom"
+                  onClickOutside={() => setClick(true)}
                   render={(attrs) => (
                     <div tabIndex="-1" {...attrs}>
                       <PopupInbox />
