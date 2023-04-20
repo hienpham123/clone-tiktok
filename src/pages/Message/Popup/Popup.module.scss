@@ -1,7 +1,18 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 99999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
 .modal_content {
-  position: absolute;
-  top: 22%;
-  left: 15%;
   width: 700px;
   height: 376px;
   background: rgb(255, 255, 255);
@@ -49,10 +60,4 @@
   justify-content: flex-end;
   padding-right: 20px;
   padding-top: 20px;
-}
-
-@media only screen and (max-height: 768px) {
-  .modal_content {
-    top: 7%;
-  }
 }
