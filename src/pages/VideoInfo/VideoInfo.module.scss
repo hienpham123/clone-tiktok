@@ -87,6 +87,58 @@
   pointer-events: none;
 }
 
+.btn-up {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(84, 84, 84, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transform: rotate(-90deg);
+  top: calc(50% - 48px);
+  margin-top: -24px;
+  right: 20px;
+
+  &:hover {
+    background-color: rgba(37, 37, 37, 0.6);
+    opacity: 0.7;
+  }
+}
+
+.btn-down {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(84, 84, 84, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transform: rotate(90deg);
+  top: calc(50% + 8px);
+  margin-top: -24px;
+  right: 20px;
+
+  &:hover {
+    background-color: rgba(37, 37, 37, 0.6);
+    opacity: 0.7;
+  }
+}
+
 .btn-sound {
   position: absolute;
   z-index: 1;

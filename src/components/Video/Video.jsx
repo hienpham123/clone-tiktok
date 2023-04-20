@@ -14,6 +14,9 @@ function Video({
   isTab,
   setIsPlaying,
   valueSound,
+  isClickChangeVideo,
+  setIsClickChangeVideo,
+  isHomePage,
   ...props
 }) {
   let vid = document.getElementById(`video_music ${src}`);
@@ -23,11 +26,22 @@ function Video({
   const [playing, setPlaying] = useState(false);
   const [isMute, setIsMute] = useState(false);
   const id = uuidV4();
+
+  if (nickname && ID && isClickChangeVideo && !isHomePage) {
+    videoRef.current?.play();
+    setIsPlaying && setIsPlaying(true);
+  } else if (nickname && ID && !isClickChangeVideo && isHomePage) {
+    videoRef.current?.pause();
+    setIsPlaying && setIsPlaying(false);
+  }
+
   const handleVideo = () => {
     if (playing) {
+      nickname && ID && setIsClickChangeVideo(false);
       videoRef.current?.pause();
       setPlaying(false);
     } else {
+      nickname && ID && setIsClickChangeVideo(true);
       videoRef.current?.play();
       setPlaying(true);
     }

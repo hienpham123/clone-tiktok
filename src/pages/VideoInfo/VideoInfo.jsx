@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Image from "../../components/Images/Image";
 import Button from "../../components/Button/Button";
 import Video from "../../components/Video/Video";
@@ -12,13 +12,13 @@ import {
   faPlay,
 } from "@fortawesome/free-solid-svg-icons";
 import {
+  ArrowDownIcon,
+  ArrowUpIcon,
   CloseIcon,
   EmbedIcon,
   FacebookIcon,
   FriendIcon,
-  LineIcon,
   MuteIcon,
-  ShareIcon,
   SoundIcon,
   TagIcon,
   TwitterIcon,
@@ -32,11 +32,13 @@ import Tippy from "@tippyjs/react";
 import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import BtnShareMore from "../Profile/Information/BtnShareMore";
+import { LIST_VIDEO_HOME } from "../../mockdatahome";
 
 const img = "../../../public/images/thanhmeo.jpeg";
 const cx = classNames.bind(styles);
 function VideoInfo() {
   const navigate = useNavigate();
+  const { nickname, id: ID } = useParams();
   const location = useLocation();
   const data = location.state?.data;
 
@@ -44,23 +46,56 @@ function VideoInfo() {
   const [isMute, setIsMute] = useState(false);
   const [valueSound, setValueSound] = useState(null);
   const [isLike, setIslike] = useState(false);
+  const [currentId, setCurrentId] = useState(null);
+  const [nextVideo, setNextVideo] = useState({});
+  const [isClickChangeVideo, setIsClickChangeVideo] = useState(false);
 
   const handleMute = () => {
     if (!isMute) {
-      document.getElementById(`video_music ${data?.src}`).muted = true;
+      document.getElementById(
+        `video_music ${nextVideo?.video || data?.src}`
+      ).muted = true;
       setIsMute(true);
     } else {
-      document.getElementById(`video_music ${data?.src}`).muted = false;
+      document.getElementById(
+        `video_music ${nextVideo?.video || data?.src}`
+      ).muted = false;
       setIsMute(false);
     }
   };
+
+  const handleBackOrNextVideo = (type) => {
+    let id = +localStorage.getItem("id");
+    if (id) {
+      setCurrentId(id);
+    }
+    // if (id >= 22) {
+    //   id = 0;
+    // } else if (id <= 0) {
+    //   id = 22;
+    // }
+    if (type === "back") {
+      localStorage.setItem("id", id - 1);
+    } else {
+      localStorage.setItem("id", id + 1);
+    }
+    const videoNext = LIST_VIDEO_HOME.find((e) => e.id === id);
+    setNextVideo(videoNext);
+    nickname && ID && videoNext && setIsClickChangeVideo(true);
+  };
+
+  useEffect(() => {
+    let currentId = +data.id;
+    localStorage.setItem("id", currentId);
+  }, []);
 
   useEffect(() => {
     if (valueSound === "0") {
       setIsMute(true);
     } else if (
       valueSound !== "0" &&
-      document.getElementById(`video_music ${data?.src}`)?.muted === false
+      document.getElementById(`video_music ${nextVideo?.video || data?.src}`)
+        ?.muted === false
     ) {
       setIsMute(false);
     }
@@ -75,7 +110,7 @@ function VideoInfo() {
             <div
               className={cx("btn-x")}
               onClick={() => {
-                navigate("/");
+                navigate("/foryou");
               }}
             >
               <CloseIcon />
@@ -111,6 +146,23 @@ function VideoInfo() {
                   }}
                   icon={faPlay}
                 />
+              </div>
+            )}
+
+            {currentId !== 1 && (
+              <div
+                className={cx("btn-up")}
+                onClick={() => handleBackOrNextVideo("back")}
+              >
+                <ArrowUpIcon />
+              </div>
+            )}
+            {currentId !== 22 && (
+              <div
+                className={cx("btn-down")}
+                onClick={() => handleBackOrNextVideo("next")}
+              >
+                <ArrowDownIcon />
               </div>
             )}
             <HeadlessTippy
@@ -155,9 +207,11 @@ function VideoInfo() {
               <div className={cx("div-top-video")}>
                 <Video
                   className={cx("video")}
-                  src={data?.src || location.state.src}
+                  src={nextVideo?.video || data?.src || location.state.src}
                   setIsPlaying={setIsPlaying}
                   valueSound={valueSound}
+                  isClickChangeVideo={isClickChangeVideo}
+                  setIsClickChangeVideo={setIsClickChangeVideo}
                 />
               </div>
             </div>
