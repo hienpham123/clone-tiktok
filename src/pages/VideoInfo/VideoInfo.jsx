@@ -42,11 +42,12 @@ function VideoInfo() {
   const location = useLocation();
   const data = location.state?.data;
 
+  const [allVideos, _] = useState(LIST_VIDEO_HOME);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMute, setIsMute] = useState(false);
   const [valueSound, setValueSound] = useState(null);
   const [isLike, setIslike] = useState(false);
-  const [currentId, setCurrentId] = useState(null);
+  const [currentId, setCurrentId] = useState(+data.id);
   const [nextVideo, setNextVideo] = useState({});
   const [isClickChangeVideo, setIsClickChangeVideo] = useState(false);
 
@@ -65,29 +66,18 @@ function VideoInfo() {
   };
 
   const handleBackOrNextVideo = (type) => {
-    let id = +localStorage.getItem("id");
-    if (id) {
-      setCurrentId(id);
-    }
-    // if (id >= 22) {
-    //   id = 0;
-    // } else if (id <= 0) {
-    //   id = 22;
-    // }
     if (type === "back") {
-      localStorage.setItem("id", id - 1);
+      setCurrentId((prev) => prev - 1);
     } else {
-      localStorage.setItem("id", id + 1);
+      setCurrentId((prev) => prev + 1);
     }
-    const videoNext = LIST_VIDEO_HOME.find((e) => e.id === id);
-    setNextVideo(videoNext);
-    nickname && ID && videoNext && setIsClickChangeVideo(true);
+    nickname && ID && setIsClickChangeVideo(true);
   };
 
   useEffect(() => {
-    let currentId = +data.id;
-    localStorage.setItem("id", currentId);
-  }, []);
+    const videoNext = allVideos.find((e) => e.id === currentId);
+    setNextVideo(videoNext);
+  }, [currentId]);
 
   useEffect(() => {
     if (valueSound === "0") {
@@ -150,7 +140,7 @@ function VideoInfo() {
               </div>
             )}
 
-            {currentId !== 1 && (
+            {currentId > 1 && (
               <div
                 className={cx("btn-up")}
                 onClick={() => handleBackOrNextVideo("back")}
@@ -158,7 +148,7 @@ function VideoInfo() {
                 <ArrowUpIcon />
               </div>
             )}
-            {currentId !== 22 && (
+            {currentId < allVideos.length && (
               <div
                 className={cx("btn-down")}
                 onClick={() => handleBackOrNextVideo("next")}
