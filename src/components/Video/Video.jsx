@@ -26,7 +26,7 @@ function Video({
   const { nickname, id: ID } = useParams();
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
-  const [isVolume, setIsVolume] = useState(null);
+  const [volume, setVolume] = useState(null);
   const [isMute, setIsMute] = useState(false);
   const id = uuidV4();
 
@@ -98,10 +98,10 @@ function Video({
   useEffect(() => {
     if (valueSound) {
       vid.volume = valueSound;
-    } else if (isVolume) {
-      vid.volume = isVolume;
+    } else if (volume) {
+      vid.volume = volume;
     }
-  }, [valueSound, isVolume]);
+  }, [valueSound, volume]);
 
   return (
     <div className="wrapper">
@@ -128,8 +128,8 @@ function Video({
                 min="0"
                 max="1"
                 step="any"
-                value={isVolume}
-                onChange={(event) => setIsVolume(event.currentTarget.value)}
+                value={volume}
+                onChange={(event) => setVolume(event.currentTarget.value)}
               />
             </div>
           </div>
