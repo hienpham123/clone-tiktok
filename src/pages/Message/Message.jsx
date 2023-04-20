@@ -31,7 +31,7 @@ function Message() {
   };
 
   const handleBack = () => {
-    navigate("/");
+    navigate("/foryou");
   };
   return (
     <div className={cx("wrapper")}>
