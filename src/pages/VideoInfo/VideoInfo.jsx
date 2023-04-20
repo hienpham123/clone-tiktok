@@ -228,7 +228,7 @@ function VideoInfo() {
                 borderRadius: "50%",
                 objecFit: "cover",
               }}
-              src={`../../${data?.avt}`}
+              src={`../../${nextVideo?.avatar || data?.avt}`}
             />
             <div
               style={{
@@ -244,23 +244,23 @@ function VideoInfo() {
                   fontSize: 18,
                 }}
               >
-                {data?.nickname}
+                {nextVideo?.nick_name || data?.nickname}
               </span>
-              <span>{data?.fullname} .1d ago</span>
+              <span>{nextVideo?.full_name || data?.fullname} .1d ago</span>
             </div>
             <Button primary>Follow</Button>
           </div>
           <div className={cx("info-mid")}>
             <span style={{ display: "flex", flexWrap: "wrap" }}>
-              {data?.content}
-              <h4>{data?.hag_tag}</h4>
+              {nextVideo?.content || data?.content}
+              <h4>{nextVideo?.hag_tag || data?.hag_tag}</h4>
             </span>
             <span style={{ display: "flex", marginTop: 10 }}>
               <FontAwesomeIcon
                 style={{ width: 13, height: 16, marginTop: 3, marginRight: 10 }}
                 icon={faMusic}
               />
-              <h4>{data?.music}</h4>
+              <h4>{nextVideo?.music || data?.music}</h4>
             </span>
 
             <div className={cx("icons-and-link")}>
@@ -287,7 +287,7 @@ function VideoInfo() {
                       textAlign: "center",
                     }}
                   >
-                    {data?.likes}
+                    {nextVideo?.likes || data?.likes}
                   </p>
                 </div>
 
@@ -306,7 +306,7 @@ function VideoInfo() {
                       textAlign: "center",
                     }}
                   >
-                    {data?.comments}
+                    {nextVideo?.comments || data?.comments}
                   </p>
                 </div>
 
