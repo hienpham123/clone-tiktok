@@ -10,6 +10,7 @@ import Message from "../pages/Message/Message";
 import VideoInfo from "../pages/VideoInfo/VideoInfo";
 
 const publicRoutes = [
+  { path: config.routes.main, component: Home },
   { path: config.routes.home, component: Home },
   { path: config.routes.following, component: Following },
   { path: config.routes.live, component: Live },

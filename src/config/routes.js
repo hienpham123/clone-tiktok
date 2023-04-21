@@ -1,4 +1,5 @@
 const routes = {
+  main: "/",
   home: "/foryou",
   following: "/following",
   profile: "/:nickname",
