@@ -1,3 +1,4 @@
+import { useState } from "react";
 import images from "../../../../assets/images";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
@@ -31,7 +32,7 @@ import Search from "../Search/Search";
 import config from "../../../../config";
 import SwitchButton from "../../../SwitchButton/SwitchButton";
 import PopupInbox from "../../../PopupInbox/PopupInbox";
-import { useState } from "react";
+import Login from "../../../../pages/Login/Login";
 
 const cx = classNames.bind(styles);
 
@@ -64,6 +65,11 @@ const MENU_ITEMS = [
     icon: <FontAwesomeIcon icon={faKeyboard} />,
     title: "Keyboard shortcuts",
   },
+  {
+    icon: <FontAwesomeIcon icon={faMoon} />,
+    iconRight: <SwitchButton />,
+    title: "Dark Mode",
+  },
 ];
 
 function Header() {
@@ -71,7 +77,9 @@ function Header() {
   const { nickname } = useParams();
   const navigate = useNavigate();
   const [click, setClick] = useState(true);
+  const [isOpenLogIn, setIsOpenLogIn] = useState(false);
 
+  const currentUser = Boolean(localStorage.getItem("user"));
   const handleToMessage = () => {
     navigate("/message");
   };
@@ -86,6 +94,11 @@ function Header() {
       case "myProfile":
         navigate("/@hien_ho_102");
         break;
+
+      case "Logout":
+        localStorage.removeItem("user");
+        location.reload();
+        break;
       default:
     }
   };
@@ -94,8 +107,16 @@ function Header() {
     i18n.changeLanguage(lng);
   };
 
+  const handleClosePopup = () => {
+    setIsOpenLogIn(false);
+  };
+
   //mock currentUser
-  const currentUser = true;
+  const handleLogin = () => {
+    localStorage.setItem("user", "@HienHoDzVlone");
+    setIsOpenLogIn(false);
+    location.reload();
+  };
 
   const userMenu = [
     {
@@ -113,13 +134,9 @@ function Header() {
     },
     ...MENU_ITEMS,
     {
-      icon: <FontAwesomeIcon icon={faMoon} />,
-      iconRight: <SwitchButton />,
-      title: "Dark Mode",
-    },
-    {
       icon: <FontAwesomeIcon icon={faSignOut} />,
       title: "Log out",
+      type: "Logout",
       separate: true,
     },
   ];
@@ -189,8 +206,17 @@ function Header() {
           ) : (
             <>
               <Button text>Upload</Button>
-              <Button primary>Log in</Button>
+              <Button primary onClick={() => setIsOpenLogIn(true)}>
+                Log in
+              </Button>
             </>
+          )}
+
+          {isOpenLogIn && (
+            <Login
+              handleClosePopup={handleClosePopup}
+              handleLogin={handleLogin}
+            />
           )}
 
           <Menu

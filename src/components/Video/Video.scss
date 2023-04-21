@@ -63,6 +63,26 @@
     z-index: 999;
     top: 420px;
     left: 292px;
+
+    /* Set track styles */
+    input[type="range"]::-webkit-slider-runnable-track {
+        height: 2px !important;
+        background: rgba(255, 255, 255, 0.34);
+        margin-top: 0px;
+        cursor: pointer;
+    }
+
+    /* Set thumb styles */
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 13px;
+        height: 13px;
+        background: rgb(255, 255, 255);
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        margin-top: -5.4px;
+        cursor: pointer;
+    }
 }
 
 .input-range {
