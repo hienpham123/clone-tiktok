@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import images from "../../../../assets/images";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
@@ -80,6 +80,7 @@ function Header() {
   const [isOpenLogIn, setIsOpenLogIn] = useState(false);
 
   const currentUser = Boolean(localStorage.getItem("user"));
+  const nameUrl = window.location.href.split("/")[3];
   const handleToMessage = () => {
     navigate("/message");
   };
@@ -140,6 +141,15 @@ function Header() {
       separate: true,
     },
   ];
+
+  useEffect(() => {
+    if (currentUser) return;
+    if (!currentUser) {
+      if (nameUrl === "message") {
+        navigate("/");
+      }
+    }
+  }, []);
 
   return (
     <header className={cx("wrapper")}>
