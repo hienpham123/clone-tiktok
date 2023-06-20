@@ -47,7 +47,7 @@ function VideoInfo() {
   const [isMute, setIsMute] = useState(false);
   const [valueSound, setValueSound] = useState(null);
   const [isLike, setIslike] = useState(false);
-  const [currentId, setCurrentId] = useState(+data.id);
+  const [currentId, setCurrentId] = useState(+data?.id);
   const [nextVideo, setNextVideo] = useState({});
   const [isClickChangeVideo, setIsClickChangeVideo] = useState(false);
 
