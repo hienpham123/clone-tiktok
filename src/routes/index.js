@@ -8,11 +8,13 @@ import config from "../config";
 import Live from "../pages/Live/Live";
 import Message from "../pages/Message/Message";
 import VideoInfo from "../pages/VideoInfo/VideoInfo";
+import Explore from "../pages/Explore/Explore";
 
 const publicRoutes = [
   { path: config.routes.main, component: Home },
   { path: config.routes.home, component: Home },
   { path: config.routes.following, component: Following },
+  { path: config.routes.explore, component: Explore },
   { path: config.routes.live, component: Live },
   { path: config.routes.profile, component: Profile },
   { path: config.routes.upload, component: Upload, layout: HeaderOnly },
