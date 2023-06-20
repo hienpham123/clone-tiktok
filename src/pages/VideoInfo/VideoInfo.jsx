@@ -51,6 +51,11 @@ function VideoInfo() {
   const [nextVideo, setNextVideo] = useState({});
   const [isClickChangeVideo, setIsClickChangeVideo] = useState(false);
 
+  const handleBackExplore = () => {
+    return location.pathname.split("/")[3] === "4923490183012830000"
+      ? true
+      : false;
+  };
   const handleMute = () => {
     if (!isMute) {
       document.getElementById(
@@ -101,7 +106,7 @@ function VideoInfo() {
             <div
               className={cx("btn-x")}
               onClick={() => {
-                navigate("/foryou");
+                navigate(handleBackExplore() ? "/explore" : "/foryou");
               }}
             >
               <CloseIcon />
